@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Introduction to IRAF</title>
+	<link href="styles.css"	type="text/css" rel="stylesheet">
+
+	<meta http-equiv="content-type"
+	content="text/html; charset=ISO-8859-1">
+<meta name="robots" content="follow,index"></head>
+
+<body>
+
+<h2>IV.  Miscellaneous Tips for Working with the CL</h2>
+
+<a href="index.html">TOC</a> | <a href="IRAFintro_03.html">previous</a> | <a href="IRAFintro_05.html">next</a><br>
+<hr>
+
+<h4 id="A">A) Input Lists</h4>
+
+<p>Many times we will want to run an IRAF task on several images.
+One way to do so is to give a comma separated list for the input.
+IRAF interprets spaces as separating different inputs, so be
+sure not to leave any spaces in the list of input images.</p>
+
+<code>cl&gt; imstat sn2002ap_300_B,sn2002ap_300_V,sn2002ap_300_R<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IMAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NPIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MEAN&nbsp;&nbsp;&nbsp;
+STDDEV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAX<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sn2002ap_300_B&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1344.&nbsp;&nbsp;&nbsp;&nbsp;
+1393.&nbsp;&nbsp;&nbsp;&nbsp; 192.8&nbsp;&nbsp;
+-31158.&nbsp;&nbsp;&nbsp; 16957.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sn2002ap_300_V&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1111.&nbsp;&nbsp;&nbsp;&nbsp;
+1146.&nbsp;&nbsp;&nbsp;&nbsp; 169.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+750.&nbsp;&nbsp;&nbsp; 26947.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sn2002ap_300_R&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1615.&nbsp;&nbsp;&nbsp;&nbsp;
+1653.&nbsp;&nbsp;&nbsp;&nbsp; 193.7&nbsp;&nbsp;&nbsp;&nbsp;
+1131.&nbsp;&nbsp;&nbsp; 28546.
+</code>
+
+<p>You can also use wildcards in your input:</p>
+
+<code>
+cl&gt; imstat sn2002ap_300_*<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IMAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NPIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MEAN&nbsp;&nbsp;&nbsp;
+STDDEV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAX<br>
+&nbsp;&nbsp; sn2002ap_300_B.fit&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1344.&nbsp;&nbsp;&nbsp;&nbsp;
+1393.&nbsp;&nbsp;&nbsp;&nbsp; 192.8&nbsp;&nbsp;
+-31158.&nbsp;&nbsp;&nbsp; 16957.<br>
+&nbsp; sn2002ap_300_B2.fit&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1336.&nbsp;&nbsp;&nbsp;&nbsp;
+1393.&nbsp;&nbsp;&nbsp;&nbsp; 188.8&nbsp;&nbsp;
+-31260.&nbsp;&nbsp;&nbsp; 17067.<br>
+&nbsp;&nbsp; sn2002ap_300_R.fit&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1615.&nbsp;&nbsp;&nbsp;&nbsp;
+1653.&nbsp;&nbsp;&nbsp;&nbsp; 193.7&nbsp;&nbsp;&nbsp;&nbsp;
+1131.&nbsp;&nbsp;&nbsp; 28546.<br>
+&nbsp; sn2002ap_300_R2.fit&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1652.&nbsp;&nbsp;&nbsp;&nbsp;
+1681.&nbsp;&nbsp;&nbsp;&nbsp; 197.2&nbsp;&nbsp;
+-30392.&nbsp;&nbsp;&nbsp; 17127.<br>
+&nbsp;&nbsp; sn2002ap_300_V.fit&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1111.&nbsp;&nbsp;&nbsp;&nbsp;
+1146.&nbsp;&nbsp;&nbsp;&nbsp; 169.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+750.&nbsp;&nbsp;&nbsp; 26947.<br>
+&nbsp; sn2002ap_300_V2.fit&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1095.&nbsp;&nbsp;&nbsp;&nbsp;
+1123.&nbsp;&nbsp;&nbsp;&nbsp; 173.6&nbsp;&nbsp;
+-31350.&nbsp;&nbsp;&nbsp; 16715.
+</code>
+
+<p>The last option is to generate a list file.  A list file is just a
+text file which contains the filenames you want to operate on, placing
+one file name per line.  You could generate it using any text editor
+you choose.  To tell IRAF that the input is a list file, prepend an
+"at" symbol like so:</p>
+
+<code>
+cl&gt; imstat @list_sn2002ap<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IMAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NPIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MEAN&nbsp;&nbsp;&nbsp;
+STDDEV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAX<br>
+&nbsp;&nbsp; sn2002ap_300_B.fit&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1344.&nbsp;&nbsp;&nbsp;&nbsp;
+1393.&nbsp;&nbsp;&nbsp;&nbsp; 192.8&nbsp;&nbsp;
+-31158.&nbsp;&nbsp;&nbsp; 16957.<br>
+&nbsp; sn2002ap_300_B2.fit&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1336.&nbsp;&nbsp;&nbsp;&nbsp;
+1393.&nbsp;&nbsp;&nbsp;&nbsp; 188.8&nbsp;&nbsp;
+-31260.&nbsp;&nbsp;&nbsp; 17067.<br>
+&nbsp;&nbsp; sn2002ap_300_R.fit&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1615.&nbsp;&nbsp;&nbsp;&nbsp;
+1653.&nbsp;&nbsp;&nbsp;&nbsp; 193.7&nbsp;&nbsp;&nbsp;&nbsp;
+1131.&nbsp;&nbsp;&nbsp; 28546.<br>
+&nbsp; sn2002ap_300_R2.fit&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1652.&nbsp;&nbsp;&nbsp;&nbsp;
+1681.&nbsp;&nbsp;&nbsp;&nbsp; 197.2&nbsp;&nbsp;
+-30392.&nbsp;&nbsp;&nbsp; 17127.<br>
+&nbsp;&nbsp; sn2002ap_300_V.fit&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1111.&nbsp;&nbsp;&nbsp;&nbsp;
+1146.&nbsp;&nbsp;&nbsp;&nbsp; 169.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+750.&nbsp;&nbsp;&nbsp; 26947.<br>
+&nbsp; sn2002ap_300_V2.fit&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp;&nbsp; 1095.&nbsp;&nbsp;&nbsp;&nbsp;
+1123.&nbsp;&nbsp;&nbsp;&nbsp; 173.6&nbsp;&nbsp;
+-31350.&nbsp;&nbsp;&nbsp; 16715.
+</code>
+
+<p>There is an easy way to generate such <code>files</code> using the
+files task within IRAF. The files task, works similarly to
+<code>ls</code> in UNIX, but it outputs one filename per line as a
+list file should contain. Here is an example of the output of
+files:</p>
+
+
+<code>
+cl&gt; files sn2002ap_300_*<br>
+sn2002ap_300_B.fit<br>
+sn2002ap_300_B2.fit<br>
+sn2002ap_300_R.fit<br>
+sn2002ap_300_R2.fit<br>
+sn2002ap_300_V.fit<br>
+sn2002ap_300_V2.fit<br>
+</code>
+
+<p>The list is simply printed to the screen. To make a list file we
+want the output to go to a file. We can do this using redirection
+commands (which work similarly in IRAF to redirection commands in
+UNIX). To redirect to a file, we use append a &gt; and the file name
+to the command. Be aware that the &gt; redirection will not overwrite
+files, so there cannot already be a file with that name.  The
+<code>type</code> and <code>page</code> commands in IRAF will print
+the contents of a text file to the screen (similar to <code>cat</code>
+and <code>more</code> in UNIX respectively), we can use those to check
+that out list file contains what we wanted.</p>
+
+<code>
+cl&gt; files sn2002ap_300_* &gt; list_sn2002ap<br>
+cl&gt; type list_sn2002ap<br>
+sn2002ap_300_B.fit<br>
+sn2002ap_300_B2.fit<br>
+sn2002ap_300_R.fit<br>
+sn2002ap_300_R2.fit<br>
+sn2002ap_300_V.fit<br>
+sn2002ap_300_V2.fit
+</code>
+
+
+<p>You can also explore the use of the UNIX commands for text editing
+to change the output of the <code>files</code> task. <code>grep</code>
+is very useful, sed, awk, and perl can also be used. For example,</p>
+
+<code>
+cl&gt; files sn2002ap_300_* | grep B &gt; list_sn2002ap_B<br>
+cl&gt; type list_sn2002ap_B<br>
+sn2002ap_300_B.fit<br>
+sn2002ap_300_B2.fit
+</code>
+
+<hr>
+
+<h4 id="B">B) CL History</h4>
+
+
+<p>One other convenience in the IRAF CL is command history.  In UNIX,
+we use the up-arrow to scroll back through previous commands.  In
+IRAF, we use the <code>ehistory</code> command.  To invoke, just type
+<code>ehist</code> or sometimes just <code>e</code> at the CL.  Then
+use the up arrow to scroll back through old commands, hit enter to
+rerun a command, you can also edit commands before running them, to
+exit <code>ehist</code>, hit CTRL-c.</p>
+
+<p>You can also call back the last occurrence of a command, by using
+<code>ehist text</code>, then the <code>ehist</code> list will jump to
+the last occurrence of a command which began with "text".</p>
+
+<hr>
+
+<h4 id="C">C) The apropos Task</h4>
+
+<p>On some installations (unfortunately not the cosmos installation
+for those of you in ASTR 3510/3520) the <code>apropos</code> task is
+available. The <code>apropos</code> task helps you find the right task
+for a given job.  <code>apropos</code> searches through brief
+descriptions of all the tasks looking for the keyword you input.
+Beware though, that there are a lot of tasks in IRAF, sometimes
+<code>apropos</code> hurts more than it helps when it returns dozens
+of task names.</p>
+
+<hr>
+
+<h4 id="D">D) Image Subsections</h4>
+
+<p>You can operate on sections of images if you like.  To describe the
+subset of pixels that you want to work on, use the following
+format:</p>
+
+<code>
+cl&gt; imstat imagename[x1:x2,y1:y2]
+</code>
+
+<p>where x1 and x2 are the x range, y1 and y2 are the y range of
+pixels.  You can also use imcopy to create a new image which is the
+subsection of a larger image:</p>
+
+<code>
+cl&gt; imcopy imagename[x1:x2,y1:y2] imagename2
+</code>
+
+<hr>
+
+<h4 id="E">E)  CL Scripts</h4>
+
+<p>In using IRAF, you may wish to script a set of commands which can
+be run in sequence with one command.  To do so, we compose a CL
+script, which is a text file usually ending in <code>.cl</code>.  We
+can run the script by redirecting it to the cl using the
+<code>&lt;</code> redirection command.</p>
+
+<p>For example, if we create a text file called
+<code>myscript.cl</code> which contains the following lines</p>
+
+<code>
+displ 026_n2392_600_ha 1 zsc- z1=32943 z2=37000<br>
+imstat 026_n2392_600_ha
+</code>
+
+<p>Then we run it using</p>
+
+<code>
+cl&gt; cl &lt; myscript.cl<br>
+z1=32943. z2=37000.<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IMAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NPIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MEAN&nbsp;&nbsp;&nbsp;
+STDDEV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAX<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 026_n2392_600_ha&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp; 32945.&nbsp;&nbsp;&nbsp;
+33056.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 402.&nbsp;&nbsp;&nbsp;
+11003.&nbsp;&nbsp;&nbsp; 61213.
+</code>
+
+<p>We can also add comments to our scripts with the <code>#</code>
+symbol.  Anything following the <code>#</code> symbol on a line is
+interpreted as a comment. For example, our text file
+<code>myscript.cl</code> could also be written</p>
+
+<code>
+# Display the image<br>
+displ 026_n2392_600_ha 1 zsc- z1=32943 z2=37000&nbsp; # note the altered z range<br>
+# See the image statistics<br>
+imstat 026_n2392_600_ha
+</code>
+
+<p>This script runs the identical commands, but with comments which
+will make it easier to interpret later on.<br>
+
+<hr>
+<a href="index.html">TOC</a> | <a href="IRAFintro_03.html">previous</a> | <a href="IRAFintro_05.html">next</a><br>
+<hr>
+Copyright &#169; <a href="mailto:jmwalawender@gmail.com">Josh Walawender</a>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11967012-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!--code_set--></body>
+</html>

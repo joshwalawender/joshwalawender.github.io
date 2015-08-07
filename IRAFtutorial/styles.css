@@ -1,0 +1,12 @@
+ol li {
+	list-style-type:upper-roman;
+}
+
+ol ol li {
+	list-style-type:upper-alpha;
+}
+
+code {
+	font-weight:bold;
+	font-family: monospace;
+}

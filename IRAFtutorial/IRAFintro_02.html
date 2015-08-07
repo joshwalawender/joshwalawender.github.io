@@ -1,0 +1,503 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Introduction to IRAF</title>
+	<link href="styles.css"	type="text/css" rel="stylesheet">
+
+	<meta http-equiv="content-type"
+	content="text/html; charset=ISO-8859-1">
+<meta name="robots" content="follow,index"></head>
+
+<body>
+
+<h2>II.  Interacting with the CL</h2>
+
+<a href="index.html">TOC</a> | <a href="IRAFintro_01.html">previous</a> | <a href="IRAFintro_03.html">next</a><br>
+<hr>
+
+<h4 id="A">A) UNIX Commands and IRAF Tasks</h4>
+
+<p>Several basic UNIX commands also exist within IRAF: <code>ls</code>, <code>mkdir</code>, <code>mv</code>, <code>cd</code>, <code>grep</code>, and many more.</p>
+
+<p>Note that <code>rm</code> does not work within IRAF, however there are two tasks which take it's place: <code>imdel</code> and <code>del</code>.</p>
+
+<p>Most interactions you have with IRAF will be through the various tasks.  Tasks are grouped into packages of similar tasks.  Several packages with the basic tasks are already loaded for you.  Once you are in IRAF, type <code>?</code> at the CL.</p>
+
+<code>cl&gt; ?<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dataio.&nbsp;&nbsp;&nbsp;&nbsp;
+language.&nbsp;&nbsp; noao.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+proto.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; utilities.&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+dbms.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+lists.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obsolete.&nbsp;&nbsp;
+softools.&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; images.&nbsp;&nbsp;&nbsp;&nbsp;
+mscred.&nbsp;&nbsp;&nbsp;&nbsp;
+plot.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+system.&nbsp;&nbsp;&nbsp;&nbsp;<br>
+</code>
+
+<p>This is a list of the packages available to you (note some of these may already be loaded, some may not). Some packages can be contained within others, this is usually specified by a dot in between the package names (i.e. images.imutil).  To get a list of tasks available type <code>??</code> at the CL</p>
+
+<code>
+cl&gt; ??<br>
+&nbsp;&nbsp;&nbsp; clpackage:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dataio.&nbsp;&nbsp;&nbsp;&nbsp;
+language.&nbsp;&nbsp; noao.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+proto.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; utilities.&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+dbms.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+lists.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obsolete.&nbsp;&nbsp;
+softools.&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; images.&nbsp;&nbsp;&nbsp;&nbsp;
+mscred.&nbsp;&nbsp;&nbsp;&nbsp;
+plot.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+system.&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; language:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; access&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+eparam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+jobs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+print&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+defpac&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+keep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+printf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; show<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+beep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+defpar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flprcache&nbsp;&nbsp;
+kill&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+putlog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sleep<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+bye&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+deftask&nbsp;&nbsp;&nbsp;&nbsp; fprint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+radix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stty<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cache&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+defvar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fscan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+lparam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; redefine&nbsp;&nbsp;&nbsp; task<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+dparam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+gflush&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+mktemp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+reset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+chdir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+hidetask&nbsp;&nbsp;&nbsp;
+osfn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+scan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unlearn<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cl.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ehistory&nbsp;&nbsp;&nbsp; history&nbsp;&nbsp;&nbsp;&nbsp;
+package&nbsp;&nbsp;&nbsp;&nbsp;
+scanf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; update<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+clbye&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+envget&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imaccess&nbsp;&nbsp;&nbsp;
+prcache&nbsp;&nbsp;&nbsp;&nbsp; service&nbsp;&nbsp;&nbsp;&nbsp; wait<br>
+&nbsp;&nbsp;&nbsp; noao:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; artdata.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+digiphot.&nbsp;&nbsp;&nbsp;&nbsp; nobsolete.&nbsp;&nbsp;&nbsp;
+onedspec.&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+astcat.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+focas.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+nproto.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+rv.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; astrometry.&nbsp;&nbsp;
+imred.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+observatory&nbsp;&nbsp; surfphot.&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; astutil.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+mtlocal.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+obsutil.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+twodspec.&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; utilities:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; curfit&nbsp;&nbsp;&nbsp;
+entab&nbsp;&nbsp;&nbsp;&nbsp; polyfit&nbsp;&nbsp;
+surfit&nbsp;&nbsp;&nbsp; ucase&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; detab&nbsp;&nbsp;&nbsp;&nbsp;
+lcase&nbsp;&nbsp;&nbsp;&nbsp; split&nbsp;&nbsp;&nbsp;&nbsp;
+translit&nbsp; urand&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; proto:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+binfil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+hfix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+irafil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+rskysub<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+bscale&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imcntr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+joinlines&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; suntoiraf<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+epix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imextensions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+mimstatistics&nbsp;&nbsp;&nbsp;&nbsp; text2mask<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fields&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imscale&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+mskexpr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fixpix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+interp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+mskregions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; tv:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display&nbsp;&nbsp;&nbsp;&nbsp;
+iis.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imedit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imexamine&nbsp;&nbsp;
+tvmark&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcslab<br>
+&nbsp;&nbsp;&nbsp; dataio:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bintxt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+mtexamine&nbsp;&nbsp; rfits&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+txtbin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wtextimage&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; export&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+rcardimage&nbsp; rtextimage&nbsp; wcardimage&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; import&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+reblock&nbsp;&nbsp;&nbsp;&nbsp;
+t2d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+wfits&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; plot:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; calcomp&nbsp;&nbsp;&nbsp;&nbsp;
+gkidir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imdkern&nbsp;&nbsp;&nbsp;&nbsp;
+phistogram&nbsp; sgidecode&nbsp;&nbsp; surface<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; contour&nbsp;&nbsp;&nbsp;&nbsp;
+gkiextract&nbsp; implot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+pradprof&nbsp;&nbsp;&nbsp; sgikern&nbsp;&nbsp;&nbsp;&nbsp; velvect<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; crtpict&nbsp;&nbsp;&nbsp;&nbsp;
+gkimosaic&nbsp;&nbsp; nsppkern&nbsp;&nbsp;&nbsp;
+prow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+showcap&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gdevices&nbsp;&nbsp;&nbsp;
+graph&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+pcol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+prows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stdgraph&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gkidecode&nbsp;&nbsp;
+hafton&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+pcols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+pvector&nbsp;&nbsp;&nbsp;&nbsp; stdplot&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; imutil:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; chpixtype&nbsp;&nbsp;&nbsp;&nbsp;
+imdelete&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imheader&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imslice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; listpixels<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+hedit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imdivide&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imhistogram&nbsp;&nbsp;
+imstack&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minmax<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+hselect&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imexpr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imjoin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imstatistics&nbsp;
+sections<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imarith&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imfunction&nbsp;&nbsp;&nbsp; imrename&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imsum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imcopy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imgets&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imreplace&nbsp;&nbsp;&nbsp;&nbsp;
+imtile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; immatch:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; geomap&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+gregister&nbsp;&nbsp; imcombine&nbsp;&nbsp;
+skymap&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcscopy&nbsp;&nbsp;&nbsp;&nbsp;
+wregister<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; geotran&nbsp;&nbsp;&nbsp;&nbsp;
+imalign&nbsp;&nbsp;&nbsp;&nbsp; linmatch&nbsp;&nbsp;&nbsp;
+skyxymatch&nbsp; wcsmap&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xregister<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; geoxytran&nbsp;&nbsp; imcentroid&nbsp;
+psfmatch&nbsp;&nbsp;&nbsp; sregister&nbsp;&nbsp; wcsxymatch&nbsp;
+xyxymatch<br>
+&nbsp;&nbsp;&nbsp; imgeom:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+blkavg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+im3dtran&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imshift&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+magnify&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; shiftlines<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+blkrep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+imlintran&nbsp;&nbsp;&nbsp;&nbsp; imtranspose&nbsp;&nbsp;
+rotate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; imfit:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fit1d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imsurfit&nbsp;&nbsp;&nbsp;
+lineclean&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; imfilter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; boxcar&nbsp;&nbsp;&nbsp;
+fmedian&nbsp;&nbsp; frmedian&nbsp; gauss&nbsp;&nbsp;&nbsp;&nbsp;
+laplace&nbsp;&nbsp; mode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rmode<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; convolve&nbsp;
+fmode&nbsp;&nbsp;&nbsp;&nbsp; frmode&nbsp;&nbsp;&nbsp; gradient&nbsp;
+median&nbsp;&nbsp;&nbsp; rmedian&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; imcoords:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ccfind&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ccsetwcs&nbsp;&nbsp;&nbsp; ccxymatch&nbsp;&nbsp;
+starfind&nbsp;&nbsp;&nbsp; wcsreset&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ccget&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ccstd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imcctran&nbsp;&nbsp;&nbsp;
+wcsctran&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ccmap&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cctran&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; skyctran&nbsp;&nbsp;&nbsp;
+wcsedit&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; images:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imcoords.&nbsp;&nbsp;
+imfit.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; immatch.&nbsp;&nbsp;&nbsp;
+tv.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imfilter.&nbsp;&nbsp;
+imgeom.&nbsp;&nbsp;&nbsp;&nbsp; imutil.&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; user:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+lpq&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+mv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rlogin&nbsp;&nbsp;
+sps&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vi<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+csh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; find&nbsp;&nbsp;&nbsp;&nbsp;
+lprm&nbsp;&nbsp;&nbsp;&nbsp; nbugs&nbsp;&nbsp;&nbsp;
+rsh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strings&nbsp; w<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buglog&nbsp;&nbsp;
+date&nbsp;&nbsp;&nbsp;&nbsp; finger&nbsp;&nbsp;
+ls&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+nm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rtar&nbsp;&nbsp;&nbsp;&nbsp;
+su&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+dbx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ftp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+mail&nbsp;&nbsp;&nbsp;&nbsp; od&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ruptime&nbsp; sync&nbsp;&nbsp;&nbsp;&nbsp; wtar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+gdb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; make&nbsp;&nbsp;&nbsp;&nbsp;
+pg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rusers&nbsp;&nbsp;
+telnet&nbsp;&nbsp; xc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cls&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+diff&nbsp;&nbsp;&nbsp;&nbsp; generic&nbsp;
+man&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ps&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rwho&nbsp;&nbsp;&nbsp;&nbsp;
+tip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clw&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+du&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grep&nbsp;&nbsp;&nbsp;&nbsp;
+mkpkg&nbsp;&nbsp;&nbsp; pwd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+sh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+top&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; comm&nbsp;&nbsp;&nbsp;&nbsp;
+emacs&nbsp;&nbsp;&nbsp; less&nbsp;&nbsp;&nbsp;&nbsp;
+mon&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rcp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+spell&nbsp;&nbsp;&nbsp; touch&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; system:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; allocate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+devstatus&nbsp;&nbsp;&nbsp;&nbsp;
+lprint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; concatenate&nbsp;&nbsp;
+directory&nbsp;&nbsp;&nbsp;&nbsp;
+match&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+pathnames&nbsp;&nbsp;&nbsp;&nbsp; spy<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+copy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+diskspace&nbsp;&nbsp;&nbsp;&nbsp;
+mkdir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+phelp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tail<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+count&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+files&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+mkscript&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+protect&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tee<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; deallocate&nbsp;&nbsp;&nbsp;
+gripes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+movefiles&nbsp;&nbsp;&nbsp;&nbsp; references&nbsp;&nbsp;&nbsp; type<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+delete&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+head&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+netstatus&nbsp;&nbsp;&nbsp;&nbsp;
+rename&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unprotect<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+devices&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+news&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+rewind&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; lists:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; average&nbsp;&nbsp;&nbsp;&nbsp;
+lintran&nbsp;&nbsp;&nbsp;&nbsp; rimcursor&nbsp;&nbsp;
+tokens&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+words&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; columns&nbsp;&nbsp;&nbsp;&nbsp;
+rgcursor&nbsp;&nbsp;&nbsp; table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+unique&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</code>
+
+<p>As you can see this is usually a long list.</p>
+
+<hr>
+
+<h4 id="B">B) Working with Tasks</h4> 
+
+<p>Now lets try working with some of the tasks. At this point I am assuming that you have a few images to play with. If you are working with images for ASTR 3510/3520 your images are probably from <a href="http://lyra.colorado.edu/sbo/">SBO</a>. If so, be sure to convert them into the proper <a href="sbo_fits.html">format</a>.  From now on I will use <code>imagename</code> to represent the name of whatever image you are working with, sometimes I will append a descriptive tag on the end of <code>imagename</code>, such as <code>imagename_V</code> to represent the V filter.</p>
+
+<p>As an example of how we will use IRAF tasks, I will use the task <code>imstat</code> as an example.  Try using the imstat task:</p>
+
+<code>
+cl&gt; imstat imagename<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IMAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NPIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MEAN&nbsp;&nbsp;&nbsp; STDDEV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAX<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 030_n2392_300_V&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp; 33556.&nbsp;&nbsp;&nbsp;&nbsp;
+574.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 253.&nbsp;&nbsp;&nbsp; 63567.
+</code>
+
+
+<p>Note that when typing the image filename into IRAF, we can leave off the .fits extension. Because we set imtype to fits in our login.cl, IRAF will assume any imagename is a .fits extension.</p>
+
+<p><code>imstat</code></b> returns some of the basic image statistics as you can see.</p>
+
+<hr>
+
+<h4 id="C">C) Changing Task Parameters at the CL</h4>
+
+<p>Each IRAF task has a set of parameters which control the behavior of the task.  These are essentially the inputs, outputs, and options you can invoke with a task.  To view the parameters as currently set for a task, use the <code>lpar</code> command.</p>
+
+<code>
+cl&gt; lpar imstat<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; images = "030_n2392_300_V" List of input images<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (fields = "image,npix,mean,stddev,min,max") Fields to be printed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (lower = INDEF)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lower limit for pixel values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (upper = INDEF)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upper limit for pixel values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (nclip = 0)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Number of clipping iterations<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (lsigma = 3.)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lower side clipping factor in sigma<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (usigma = 3.)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upper side clipping factor in sigma<br>
+&nbsp;&nbsp;&nbsp; (binwidth = 0.1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bin width of histogram in sigma<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (format = yes)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Format output and print column labels ?<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cache = no)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache image in memory ?<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (mode = "ql")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</code>
+
+<p>There are two types of parameters, those that are required to be input when you invoke a task and those which have defaults which you do not need to specify (hidden parameters).  The required parameters are those which are not enclosed by parenthesis in the <code>lpar</code> list.  In the case of <code>imstat</code>, the only required parameter input is the image name (or list of image names) for which you want statistics.  If you omit one of these parameters, IRAF will prompt you for input.</p>
+
+
+<p>The second type of parameter is enclosed in parenthesis in the <code>lpar</code> list.  These do not need to be set when you invoke the task, if you do not specify them, then the default value listed by <code>lpar</code> will be used.</p>
+
+<p>To see what each of the parameters controls, we can look at the help page for that task:</p>
+
+<code>
+cl&gt; help imstat<br>
+<br>
+IMSTATISTICS (Feb01)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images.imutil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMSTATISTICS (Feb01)<br>
+<br>
+NAME<br>
+&nbsp;&nbsp;&nbsp; imstatistics -- compute and print image pixel statistics<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; <br>
+USAGE&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; imstatistics images<br>
+&nbsp;&nbsp;&nbsp; <br>
+PARAMETERS<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; images<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The input images or image sections for&nbsp; which&nbsp; pixel&nbsp; statistics<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; are to be computed.<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; fields = "image,npix,mean,stddev,min,max"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The statistical quantities to be computed and printed.<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; lower = INDEF<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The&nbsp; minimum&nbsp; good data limit.&nbsp; All pixels are above the default<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value of INDEF.<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; upper = INDEF<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The maximum good data limit.&nbsp; All pixels are above&nbsp; the&nbsp; default<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value of INDEF.
+</code>
+
+<p>There is more of the help page, but I won't reproduce the rest here.  The top line tells us the task name, the package in which it is found.  The USAGE section specifies the cl command and order of the inputs (in this case just one).  The PARAMETERS section describes all the parameters and inputs.</p>
+
+<p>To specify an optional (hidden) parameter at the cl, use the <code>parametername=value</code> format.  For example:</p>
+
+<code>
+cl&gt; imstat imagename binwidth=0.4<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IMAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NPIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MEAN&nbsp;&nbsp;&nbsp; STDDEV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAX<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 030_n2392_300_V&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp; 33556.&nbsp;&nbsp;&nbsp;&nbsp;
+574.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 253.&nbsp;&nbsp;&nbsp; 63567.
+</code>
+
+<p>Notice that I specified the required inputs first, in the order described in the help page, then I specified the optional (hidden) parameter.  Some hidden parameters are boolean (they have only two values, yes or no).  To specify them we can type
+<code>parametername=yes</code> or <code>parametername=no</code> at the cl, a convenient shortcut is to use type <code>parametername</code>+ or <code>parametername-</code> which are shorthand for yes and no respectively.</p>
+
+
+
+<p>I should mention another convenient shortcut here: IRAF does not require that you type the full name of the task or parameter, as long as you type enough so that there is only one possible completion of the word.  I've already been using this: the full name for the task I described as <code>imstat</code> is <code>imstatistics</code>.  An example, using all of these shortcuts:</p>
+
+<code>
+cl&gt; imstat imagename binw=0.4 format-&nbsp; <br>
+030_n2392_300_V&nbsp; 173400&nbsp; 33556.36&nbsp; 574.462&nbsp;253.&nbsp; 63567.
+</code>
+
+<hr>
+
+<h4 id="D">D) Changing Task Parameters Using epar</h4>
+
+<p>The parameter editing method we used in the last section is useful for a single invocation of a task, but if we want to use that same parameter every time we invoke a task, we would like to change the parameter permanently. We do this using the <code>epar</code> task. If we invoke epar, we are able to edit each of the parameters, when we exit the editor, the changes are saved, so that even if we exit IRAF and come back later, the changes to the parameters will still be there.</p>
+
+
+<p>Running <code>epar imstat</code> will bring up a page similar to what we saw with <code>lpar imstat</code>, however we can now interact with the parameter list.  Use the arrow keys to move up and down in the list, when you get to the parameter you want to edit, start typing, when you're done hit enter, the move to the next parameter you want to edit.  Once you're done editing the parameter values, you can exit two ways: CTRL-c will exit and cancel all your changes, CTRL-d will exit saving your changes.</p>
+
+
+<p>Try this: use <code>epar</code> to edit imstat. Change the line which initially reads</p>
+
+<code>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (fields = "image,npix,mean,stddev,min,max") Fields to be printed
+</code>
+
+<p>to read</p>
+
+<code>
+&nbsp; &nbsp; &nbsp; (fields = "image,npix,mode,mean,stddev,min,max") Fields to be printed
+</code>
+
+<p>this simply adds a field to the output which contains the mode of the image.</p>
+
+<code>
+cl&gt; imstat imagename<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IMAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NPIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MEAN&nbsp;&nbsp;&nbsp;
+STDDEV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAX<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 030_n2392_300_V&nbsp;&nbsp;&nbsp;
+173400&nbsp;&nbsp;&nbsp; 33487.&nbsp;&nbsp;&nbsp;
+33556.&nbsp;&nbsp;&nbsp;&nbsp; 574.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+253.&nbsp;&nbsp;&nbsp; 63567.
+</code>
+
+<p>Now <code>imstat</code> will always print the mode of the image (a useful statistic to be discussed later).</p>
+
+
+<hr>
+<a href="index.html">TOC</a> | <a href="IRAFintro_01.html">previous</a> | <a href="IRAFintro_03.html">next</a><br>
+<hr>
+Copyright &#169; <a href="mailto:jmwalawender@gmail.com">Josh Walawender</a>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11967012-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!--code_set--></body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Introduction to IRAF</title>
+	<link href="styles.css"	type="text/css" rel="stylesheet">
+
+	<meta http-equiv="content-type"
+	content="text/html; charset=ISO-8859-1">
+<meta name="robots" content="follow,index"></head>
+
+<body>
+
+<h2>III.  Ximtool and Displaying Images</h2>
+
+<a href="index.html">TOC</a> | <a href="IRAFintro_02.html">previous</a> | <a href="IRAFintro_04.html">next</a><br>
+<hr>
+
+<h4 id="A">A) How To Display Images</h4>
+
+<p>IRAF requires a program which it can interact with to display
+images.  There are several available: ximtool, saoimage, ds9, and
+perhaps more that I'm not aware of.  I use ds9 most of the time,
+though I actually prefer ximtool because of it's (in my opinion)
+better user interface.  Ximtool, however, requires an 8-bit display
+environment.  Most displays today are 24-bit, so this is a huge
+obstacle.</p>
+
+<p>To start ds9, run the command from the UNIX environment (not the IRAF cl):</p>
+
+<code>
+% ds9 &amp;
+</code>
+
+<p>This will bring up a new ds9 window.</p>
+
+<p>To display an image in ds9, we'll use the IRAF display task.  If
+you take a look at the help page for display, you'll see that display
+requires two inputs, the image and frame.  ds9 has several image
+frames, meaning you can load up to 16 (or possibly only 4, depending
+on your software version) images and use ds9 to blink between
+them. The format to display in frame 1 is:</p>
+
+<code>
+cl&gt; display imagename 1<br>
+z1=33373. z2=33745.93<br>
+</code>
+
+<p>To display an image in a frame other than 1, simply replace 1 with
+the frame number (up to 16).</p>
+
+<p>Notice that display prints out two parameters, z1 and z2.  We'll
+discuss these in the next section.</p>
+
+<hr>
+
+<h4 id="B">B) Understanding Your Image Display:  Display Range</h4>
+
+<p>You might think that once you display your image, you are seeing
+all of the data, this is not the case.  It's important to understand
+what the image display is doing and what its limitations are.</p>
+
+
+<p>The display range is set by the z1 and z2 parameters in
+<code>display</code>.  Think of the image as a matrix of numbers, each
+number represents the brightness in that pixel. The display range, set
+by z1 and z2, represent the minimum and maximum values displayed. If
+the transfer function (to be discussed later) assigns black to low
+values and white to high values, then z1 is the pixel value
+corresponding to black, and z2 corresponds to white. Any pixel with a
+value lower than z1 is black, and values higher than z2 are white,
+anything in between z1 and z2 is some shade of gray. <em>Thus it is
+important to note what your z1 and z2 values are.</em> For example, if
+there is detail in your picture above the z2 value, it will look
+washed out until you adjust the z1 and z2 values.</p>
+
+<p>Using the default parameters, the <code>display</code> task will
+automatically set the z1 and z2 values based on it's own internal
+algorithm.  The parameter contrast will change the automatically
+selected contrast (though I find the default value to be a good
+compromise).</p>
+
+<p>The parameter zscale will turn the automatic scaling on and off.
+If zscale is turned off and the parameter zrange is turned on then z1
+and z2 are set to the minimum and maximum values in the image (usually
+a terrible choice).  I find it convenient to epar display and turn
+zrange off permanently since I almost never want z1 and z2 set to the
+min and max.  Go ahead and run <code>epar display</code> and turn off
+zrange.</p>
+
+<p>To set z1 and z2 manually, you must turn off zscale and set
+z1 and z2 values like thisL</p>
+
+<code>
+cl&gt; displ imagename 1 zsc- z1=950 z2=1500<br>
+z1=950. z2=1500.
+</code>
+
+<p>Note that this will only work if I've turned off zrange using
+<code>epar</code>.  The z1 and z2 values printed out by display should
+match the ones you input.</p>
+
+<hr>
+
+<h4 id="C">C) Understanding Your Image Display:  The Transfer Function (Brightness and Contrast)</h4>
+
+<p>Once you've displayed an image and have set z1 and z2, you can
+still alter what is displayed by changing the brightness and contrast
+(the transfer function). This is the mapping between pixel value and
+screen brightness.</p>
+
+<p>Changing the transfer function is done in ximtool, not IRAF.  Click
+on the ximtool window and while your cursor is somewhere in the image
+area, click and hold the right mouse button and move the mouse around
+within the image display area.  Essentially the left and right
+position of the mouse controls the contrast and the up and down
+position controls the brightness.  This can really help bring out
+faint details, so when inspecting and image be sure to adjust the
+transfer function to one which shows the faint detail if that's what
+you're looking at.</p>
+
+<p>NOTE: The combination of the settings of z1, z2, brightness, and
+contrast is sometimes called the image stretch.  After you play around
+with it a bit, you will see that different stretches of the image will
+reveal different information in either the faint or bright regions of
+the image.</p>
+
+
+<hr>
+<a href="index.html">TOC</a> | <a href="IRAFintro_02.html">previous</a> | <a href="IRAFintro_04.html">next</a><br>
+<hr>
+Copyright &#169; <a href="mailto:jmwalawender@gmail.com">Josh Walawender</a>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11967012-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!--code_set--></body>
+</html>
