@@ -10,4 +10,5 @@ I'm an astronomer living on the Big Island of Hawaii.  My research involves stud
 
 * Flickr: [Twilight Landscapes](http://www.flickr.com/photos/twilight-landscapes/)
 * Email: [jmwalawender@gmail.com](mailto:jmwalawender@gmail.com)
+* LinkedIn: [Josh Walawender](https://www.linkedin.com/pub/josh-walawender/16/737/a73)
 
