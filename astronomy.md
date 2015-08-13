@@ -10,7 +10,7 @@ I’ve been an amateur astronomer since I was about eleven years old. At thirtee
 ## Astronomy Articles
 
 * Review of the Stellarvue SV102ED
-* Buying Your First Telescope
+* [Buying Your First Telescope](first_telescope.html)
 * Visiting Hawaii:  A Guide for the Astronomy Enthusiast
 
 ## My Telescopes
