@@ -1,5 +1,5 @@
 ---
-title: Astronomy
+title: Astrophotography
 layout: default
 ---
 
