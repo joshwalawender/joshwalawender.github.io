@@ -3,5 +3,6 @@ title: Astronomy
 layout: default
 ---
 
-## Astrophotography
+## Astrophotography Galleries
 
+* [Astrophotography](http://adobe.ly/1TUSZyX)
