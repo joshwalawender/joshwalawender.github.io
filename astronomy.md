@@ -9,6 +9,6 @@ I’ve been an amateur astronomer since I was about eleven years old. At thirtee
 
 ## Astronomy Articles
 
+* [Visiting Hawaii](visiting_hawaii.html):  A Guide for the Astronomy Enthusiast
 * [Buying Your First Telescope](first_telescope.html)
-* Visiting Hawaii:  A Guide for the Astronomy Enthusiast
 * [My Telescopes](my_telescopes.html)
