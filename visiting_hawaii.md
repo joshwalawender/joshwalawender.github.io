@@ -188,7 +188,10 @@ There is one other way to do observing on Mauna Kea and that is to take a commer
 
 ### Local Resources
 
-There are two astronomy clubs on the Big Island.  The larger and more active club is the <a class="class1" title="http://www.whacastro.com" href="http://www.whacastro.com">West Hawaii Astronomy Club (WHAC)</a>.  They meet monthly in Waimea at either the Keck or CFHT headquarters.  They have an online discussion group on Yahoo! Groups (search for WHAC) which can be quite helpful.  In addition to WHAC, there is a smaller club based in Hilo.  <a class="class2" title="http://www.hiloastro.org/HiloAstro/Welcome.html" href="http://www.hiloastro.org/HiloAstro/Welcome.html">The Hilo Astronomy Club (HAC)</a> is currently less active in that they have no regular meetings, but has an on line discussion group on Yahoo! Groups (search for HiloAstro) and regularly goes observing at the VIS.  Both clubs welcome queries from visitors so don't hesitate to log on and post a question.
+The largest and more active astronomy club on the island is the <a href="http://www.whacastro.com">West Hawaii Astronomy Club (WHAC)</a>.  They meet monthly in Waimea at either the Keck or CFHT headquarters.  They have an online discussion group on Yahoo! Groups (search for WHAC) which can be quite helpful.
+
+There's also an online only discussion group for all Hawaii amateur astronomers: the <a href="https://groups.yahoo.com/group/HawaiianAstronomy/
+">Hawaiian Astronomy</a> Yahoo! Group.  This is an active discussion group and is a great place to post questions about visiting.
 
 ### Final Thoughts
 
