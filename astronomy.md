@@ -17,6 +17,6 @@ I’ve been an amateur astronomer since I was about eleven years old. At thirtee
 
 While a grad student at the University of Colorado, I was the TA for the upper division observational astronomy course for four semesters.  I wrote a tutorial on the Image Reduction and Analysis Facility (IRAF) software commonly used at the time for image reductions in astrophysics.  Some still find it useful, so I've kept it online even though it is a bit out of date now:
 
-* [IRAF Tutorial](IRAF_tutorial/Contents.html)
+* [IRAF Tutorial](IRAF_Tutorial/Contents.html)
 
 I've also kept an even [older version](IRAFtutorial/index.html) available as well.
