@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <id>urn:iweb:3E373F9B-99F7-4342-8BA9-4C0E68410D6C</id>
+ <title>Page list Atom feed</title>
+ <updated>2012-07-03T15:06:05-10:00</updated>
+ <link rel="self" href="feed.xml"/>
+ <generator>iWeb</generator>
+ <author>
+  <name>iWeb</name>
+ </author>
+ <entry>
+  <id>urn:iweb:36F723F5-69C0-49B1-B2D2-A9D8DA5FFBA7</id>
+  <title>Contents</title>
+  <title xmlns="urn:iweb:">Contents</title>
+  <in-navbar xmlns="urn:iweb:">36F723F5-69C0-49B1-B2D2-A9D8DA5FFBA7</in-navbar>
+  <link rel="alternate" href="Contents.html"/>
+  <updated>2012-07-03T15:06:05.001-10:00</updated>
+  <content>Contents</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:6D922BEC-4CF2-46EF-A129-1A829844A3FE</id>
+  <title>1-Starting IRAF</title>
+  <title xmlns="urn:iweb:">1-Starting IRAF</title>
+  <in-navbar xmlns="urn:iweb:">6D922BEC-4CF2-46EF-A129-1A829844A3FE</in-navbar>
+  <link rel="alternate" href="1-Starting_IRAF.html"/>
+  <updated>2012-07-03T15:06:05.002-10:00</updated>
+  <content>1-Starting IRAF</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:09E527A7-D9C7-420F-99B6-7848CAB37A51</id>
+  <title>2-Introduction to the CL</title>
+  <title xmlns="urn:iweb:">2-Introduction to the CL</title>
+  <in-navbar xmlns="urn:iweb:">09E527A7-D9C7-420F-99B6-7848CAB37A51</in-navbar>
+  <link rel="alternate" href="2-Introduction_to_the_CL.html"/>
+  <updated>2012-07-03T15:06:05.003-10:00</updated>
+  <content>2-Introduction to the CL</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:076CA817-F540-47DF-8547-6AA62438E4E4</id>
+  <title>3-Displaying Images</title>
+  <title xmlns="urn:iweb:">3-Displaying Images</title>
+  <in-navbar xmlns="urn:iweb:">076CA817-F540-47DF-8547-6AA62438E4E4</in-navbar>
+  <link rel="alternate" href="3-Displaying_Images.html"/>
+  <updated>2012-07-03T15:06:05.004-10:00</updated>
+  <content>3-Displaying Images</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:4BF4C4C2-07AA-4890-BC50-E96A4D9A26A9</id>
+  <title>4-Working with the CL</title>
+  <title xmlns="urn:iweb:">4-Working with the CL</title>
+  <in-navbar xmlns="urn:iweb:">4BF4C4C2-07AA-4890-BC50-E96A4D9A26A9</in-navbar>
+  <link rel="alternate" href="4-Working_with_the_CL.html"/>
+  <updated>2012-07-03T15:06:05.005-10:00</updated>
+  <content>4-Working with the CL</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:A9E6BA59-2E37-4433-AFA4-53A8622A2F6E</id>
+  <title>5-Image Reductions</title>
+  <title xmlns="urn:iweb:">5-Image Reductions</title>
+  <in-navbar xmlns="urn:iweb:">A9E6BA59-2E37-4433-AFA4-53A8622A2F6E</in-navbar>
+  <link rel="alternate" href="5-Image_Reductions.html"/>
+  <updated>2012-07-03T15:06:05.006-10:00</updated>
+  <content>5-Image Reductions</content>
+ </entry>
+ <entry>
+  <id>urn:iweb:5A3D38CA-24D2-4052-93A6-E91DA4ABB15F</id>
+  <title>UNIX Tutorial</title>
+  <title xmlns="urn:iweb:">UNIX Tutorial</title>
+  <in-navbar xmlns="urn:iweb:">5A3D38CA-24D2-4052-93A6-E91DA4ABB15F</in-navbar>
+  <link rel="alternate" href="UNIX_Tutorial.html"/>
+  <updated>2012-07-03T15:06:05.007-10:00</updated>
+  <content>UNIX Tutorial</content>
+ </entry>
+</feed>
