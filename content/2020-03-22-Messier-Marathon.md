@@ -1,6 +1,11 @@
-title: A Social Distancing Half Messier Marathon
-date: 2020-03-22
-author: Josh Walawender
+Title: A Social Distancing Half Messier Marathon
+Date: 2020-03-22
+Author: Josh Walawender
+Header_Cover: images/6D-7894.jpg
+Category: Observing Reports
+Tags: Mauna Loa, Messier Marathon, Astronomy
+Slug: messier-marathon-2020
+
 
 # A Social Distancing Half Messier Marathon
 
