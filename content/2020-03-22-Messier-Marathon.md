@@ -6,9 +6,6 @@ Category: Observing Reports
 Tags: Mauna Loa, Messier Marathon, Astronomy
 Slug: messier-marathon-2020
 
-
-# A Social Distancing Half Messier Marathon
-
 I practiced some good social distancing and went out for a solo observing session on Sunday night.  I got to the site (a pullout on the Mauna Loa access road at about 8600 ft elevation) right at sunset and set up quickly.  The original plan from months ago was to attempt a Messier Marathon around this time in March with a bunch of other people, but with the COVID-19 crisis gatherings were not recommended and with a crazy week at work leading up to this, I didn’t want to attempt an all nighter.  I figure if there can be such a thing as a “half marathon” for runners, I could try a Half Messier Marathon.  
 
 Conditions were beautiful with very light winds.  At sunset I could see the clouds of the inversion layer below.  One disadvantage of the Mauna Loa Access Road area is that the clouds tend to be pushed up the northeastern slope of Mauna Loa by the prevailing winds, so as you drive up the access road going east on the north slope of the mountain, the clouds tend to rise along with you.  This meant I went a bit further up than I’d planned, hence the arrival right at sunset.  I set up the scope, an SVX152 on a Losmandy G-11 and started trying to spot the constellations setting in the West, so I could begin with my first objects of the night: the M31 group (M31, M32, M110).
