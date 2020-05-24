@@ -32,7 +32,9 @@ DEFAULT_PAGINATION = 5
 #RELATIVE_URLS = True
 
 HEADER_COVER = 'images/6D-7894.jpg'
+GITHUB_URL = 'http://github.com/joshwalawender'
 
+STATIC_PATHS = 'content/pages/IRAFtutorial'
 
 # Notes
 # pelican content -o output -s pelicanconf.py -t pelican-clean-blog -r --listen
