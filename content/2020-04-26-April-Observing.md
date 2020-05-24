@@ -3,7 +3,7 @@ Date: 2020-04-27
 Author: Josh Walawender
 Header_Cover: images/6D-7894.jpg
 Category: Observing Reports
-Tags: Mauna Loa, Astronomy
+Tags: Mauna Loa, Astronomy, Observing Reports
 Slug: april-observing-2020
 
 I managed to go out on April 17 and 26th bracketing the new moon.  I spent both nights working with my Stellarvue SVX152 refractor  on a new alt-az mount (the Rowan AZ100).

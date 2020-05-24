@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Josh Walawender'
-SITENAME = 'Twilight Landscapes Blog'
+SITENAME = "Twilight Landscapes Blog"
 SITEURL = ''
 
 PATH = 'content'
@@ -20,7 +20,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = ()
+LINKS = (('My Photography', 'https://twilightlandscapes.com'),
+         )
 
 # Social widget
 SOCIAL = ()
@@ -31,3 +32,8 @@ DEFAULT_PAGINATION = 5
 #RELATIVE_URLS = True
 
 HEADER_COVER = 'images/6D-7894.jpg'
+
+
+# Notes
+# pelican content -o output -s pelicanconf.py -t pelican-clean-blog -r --listen
+# ghp-import -m "Generate Pelican site" --no-jekyll -b master output
