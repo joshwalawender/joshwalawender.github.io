@@ -38,4 +38,7 @@ The end of the night concluded with a look at a few bright interesting targets. 
 
 While observing, I got a nice time lapse of the center of the Milky Way rising over the slope of Mauna Loa as some night clouds passed along the southern horizon.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iygaQDIiCzY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 It was a very good night.  Good seeing (at times), dark (SQM 21.82), with low winds.
+
