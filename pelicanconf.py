@@ -7,9 +7,10 @@ SITENAME = "Twilight Landscapes Blog"
 SITEURL = ''
 
 PATH = 'content'
+STATIC_PATHS = ['images', 'IRAFtutorial']
+ARTICLE_EXCLUDES = ['IRAFtutorial']
 
 TIMEZONE = 'US/Hawaii'
-
 DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
@@ -18,13 +19,6 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
-
-# Blogroll
-LINKS = (('My Photography', 'https://twilightlandscapes.com'),
-         )
-
-# Social widget
-SOCIAL = ()
 
 DEFAULT_PAGINATION = 5
 
@@ -37,3 +31,8 @@ GITHUB_URL = 'http://github.com/joshwalawender'
 # Notes
 # pelican content -o output -s pelicanconf.py -t pelican-clean-blog -r --listen
 # ghp-import -m "Generate Pelican site" --no-jekyll -b master output
+
+INTRO_CONTENT = """Welcome to Josh Walawender's blog.  This mostly contains posts 
+related to amateur astronomy such as observing reports.  You can check out some 
+of my photography over at
+<a href='https://www.twilightlandscapes.com'>www.twilightlandscapes.com</a>"""

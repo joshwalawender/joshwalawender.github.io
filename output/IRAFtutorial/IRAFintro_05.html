@@ -1,0 +1,316 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Introduction to IRAF</title>
+
+	<meta http-equiv="content-type"
+	content="text/html; charset=ISO-8859-1">
+<meta name="robots" content="follow,index"></head>
+
+<body>
+
+<h2>V.  Basic Reductions for Imaging Data</h2>
+
+<a href="index.html">TOC</a> | <a href="IRAFintro_04.html">previous</a> | <a href="IRAFintro_06.html">next</a><br>
+<hr>
+
+<h4 id="A">A) Image Reduction Overview</h4>
+
+<p>The first goal of image reduction is to correct two types of errors
+in the CCD data: additive and multiplicative errors.  As you recollect
+from section III. B., we are thinking of an image as a matrix of
+numbers, each number represents the brightness in that pixel.
+Additive errors add to the values of pixels, multiplicative errors
+multiply the value in a pixel. To correct additive errors, we simply
+subtract something from the image and to correct multiplicative
+errors, we simply divide the image by something.</p>
+
+<p>Additive errors arise from two primary sources: bias offset &amp;
+dark current.  In this document, I will primarily leave the detailed
+description of what gives rise to these effects to class discussion
+and focus on the IRAF methods of correcting them.  There are two types
+of calibration images that might be used to correct these additive
+errors: dark and bias frames.  A dark is simply an image taken by the
+CCD for the same exposure length as the exposure it is meant to
+correct (it should also be taken at the same CCD operating
+temperature.  A dark will correct both bias offset and dark current.
+A bias frame is essentially a zero length dark frame, so it corrects
+bias offset, but not dark current (note: a bias frame is also called a
+zero frame).  Why the two methods?  Well, research CCDs are
+cryogenically cooled (usually to liquid nitrogen temperature -- 77 K),
+so they do not suffer from dark current, thus data from a
+cryogenically cooled CCD need only be corrected by a bias frame.  A
+CCD which is cooled, but not to cryogenic temperatures (such as those
+we use at SBO), needs to be corrected for both bias offset and dark
+current, so we will use dark frames instead of bias frames.</p>
+
+<p>Multiplicative errors can arise from several sources: differences
+in quantum efficiency, illumination differences (vignetting), and dust
+halos (aka dust doughnuts).  All of these represent a difference in
+sensitivity from pixel to pixel in the chip, thus different pixels
+need to be multiplied up to larger values to match more sensitive
+pixels.  To correct this, we take a calibration image called a flat
+field.  The flat is simply an image of an evenly illuminated field
+(usually a white spot on the inside of the dome).</p>
+
+<p>The mathematical representation of the basic reductions to correct
+additive and multiplicative errors is:</p>
+
+
+<code>
+final_image = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(raw_image - dark1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(flat - dark2) / &lt;flat - dark2&gt;
+</code>
+
+<p>There is actually one more source of errors in images: cosmic rays.
+Cosmic rays are high energy particles which pass through our CCD
+detector and deposit large amounts of energy.  This deposition of
+energy mimics the deposition of energy by which CCDs detect photons.
+The best way to pick out cosmic rays is to take multiple images, then
+any bright pixels which show up in that position in only one image is
+a cosmic ray.</p>
+
+<hr>
+
+<h4 id="B">B) Combining the Darks</h4>
+
+<p>Any time we add, subtract, multiply, or divide two images, we are
+adding the noise in the two images.  This is undesirable in that we
+will end up with larger noise in our science exposure if we apply the
+corrections described above.  To combat this, we try to take many
+calibration exposures and combine them to make a single calibration
+exposure (be it a dark, bias, or flat).  This reduces the noise in our
+calibration exposure, so that it will hopefully add only a negligible
+amount of noise to our science exposure.  I recommend taking at least
+three and preferably 5 or more of each of my calibration images (the
+reason for taking an odd number will become clear later) and then
+combining those images into a single master calibration image.</p>
+
+<p>When we combine these calibration images, we will not perform an
+average as one might expect.  Instead we will median the images --
+meaning that the resulting value in a pixel in the final image is the
+median of the values in that same pixel in the input images. The
+advantage of median combining the images is that when one image has a
+very discrepant value (i.e. from a cosmic ray) this doesn't
+dramatically affect the resultant value (a median is more resistant to
+one discrepant value than an average).  If you've taken at least three
+images, then this will reject almost all cosmic ray events. Note that
+when there are an even number of input values to a median, then it
+will average the two middle values (thus the motivation for taking an
+odd number of images to combine).</p>
+
+<p>The first step in our reduction scheme is to combine all of our
+darks of each exposure length into a single master dark.  If you've
+completed an observing run in which you've taken science images with
+exposure times of 300, 180, and 60 seconds, then you should have at
+least three darks at each of those exposure lengths for a total of 9
+darks for your science images. You will also have darks for the
+exposure lengths of your flat field exposures (usually a different
+exposure length in each filter), so if you used 3 filters and have
+three darks for each of those flats, the you get 9 more darks for a
+total of 18. Once combined, you would have 6 master dark frames.</p>
+
+<p>Let's say you have used a naming convention for your dark images of
+<code>##dark_NNNs.  fits</code> where ## is the exposure number 01-99
+as you go through the night, and NNN is the exposure time. For
+example, the 300 second darks might be named
+<code>67dark_300s.fits</code>, <code>68dark_300s.fits</code>, and
+<code>69dark_300s.fits</code>.  Let's also assume that you've made a
+list file (see section IV. A.) containing these image names called
+<code>list_dark_3 00s</code>.  We will use the <code>imcombine</code>
+task to do the image combination.  In using <code>imcombine</code>, we
+will set the parameter combine to median, to make the image
+combination process do a median combine rather than an average. You
+can either change the parameter using <code>epar</code>, or set it on
+the command line.  Looking at the help page for
+<code>imcombine</code>, we see that the usage format is
+<code>imcombine <i>input</i> <i>output</i></code>.  Thus, we will run
+it as:</p>
+
+<code>
+cl&gt; &nbsp;imcombine @list_dark_300s dark_300s combine=median
+</code>
+
+<p>The task will print out to the screen various messages about the
+progress of the task. Our output image (the master dark frame for 300
+second exposures will be called <code>dark_300s.fits</code>).  We
+would then repeat this process and create a master dark of each
+exposure length.</p>
+
+<hr>
+
+<h4 id="C">C) Subtracting Darks</h4>
+
+<p>Flat field images also have bias offset and dark current so they
+need to be corrected by subtracting a dark. Let's say we're working on
+a set of flat field images in the V filter and that they were each 10
+second exposures.  Using the naming convention of
+<code>##flat_F_NNNs.fits</code>, where ## is the exposure number, F is
+the filter, and NNN is the exposure time. Thus our hypothetical flat
+images might be called 70flat_V_010s.fits, 71flat_V_010s.fits, and
+72flat_V_010s.fits and we've typed these names into a list file called
+<code>list_flat_V_010s</code>.  To subtract the 10 second master dark
+from all of the images we will use the <code><b>imarith</b></code>
+task.  Looking at the help page, we see the usage format is
+<code><b>imarith <i>operand1</i> <i>op</i> <i>operand2</i>
+<i>result</i></b></code>.  We could create a list file which contains
+the names of the output images and call them 70flat_V_ds.fits,
+71flat_V_ds.fits, and 72flat_V_ds.fits, where ds stands for dark
+subtracted.  You could also simply overwrite the original images by
+giving the input list file as the output list file (I'll do this in
+the example below).</p>
+
+<code>
+cl&gt; imarith @list_flat_V_010s - dark_010s @list_flat_V_010s
+</code>
+
+<p>Now our flat images are dark subtracted.</p>
+
+
+<p>While we're at it, let's subtract darks from our science images.
+The naming convention for our science images is
+<code>##obj_F_NNNs.fits</code>, where ## is the exposure number, obj
+is the object name, F is the filter, and NNN is the exposure time. For
+example, if we had three images of the Orion Nebula (M 42), the images
+might be <code>01M42_V_120s.fits</code>,
+<code>02M42_V_120s.fits</code>, and <code>03M42_V_120s.fits</code>,
+and we'd have a list file of these three files called
+<code>list_M42_V_120s</code>.  To subtract the darks:</p>
+
+
+<code>
+cl&gt; imarith @list_M42_V_120s - dark_120s @list_M42_V_120s
+</code>
+
+<hr>
+
+<h4 id="D">D) Combining the Flats</h4>
+
+<p>Now we need to combine the flats from each filter. Combining flats
+has one additional twist: if during our flat field exposures, the
+lamps illuminating the white spot on the dome flickered or faded, the
+multiple flats we took in each filter would have slightly different
+average values throughout the image. This would throw off the median
+combine in that it would always take the pixel from the middle
+exposure image and thus not reduce the noise.  We need to include a
+small multiplicative correction to each flat field.  We can do this by
+setting the scale parameter in <code>imcombine</code> to mode.  This
+means that before combining, the images will be multiplied by a factor
+(close to one) which will make the mode of each image the same.</p>
+
+<code>
+cl&gt; imcombine @list_flat_V_010s flat_V combine=median scale=mode
+</code>
+
+<p>Now we have a single master flat for the V filter.</p>
+
+<hr>
+
+<h4 id="E">E) Normalizing the Flats</h4>
+
+<p>We are eventually going to divide the science image by the flat,
+however our flat image has a large number of counts per pixel (we took
+an image of a brightly illuminated screen), whereas our science images
+have relatively few counts per pixel (astronomical objects are faint).
+If we simply divide one by the other, all the pixels in the resultant
+image would have very small values which are related as much to the
+pixel value in the flat as the pixel value in the science image.
+Ideally, we'd only like to slightly modify the counts in the object
+frame enough to correct the multiplicative errors without
+significantly changing the pixel values in the object image. We do
+this by dividing the flat field image by a constant to make the pixels
+in the flat field frame close to one before dividing the object frame
+by the flat field.</p>
+
+<p>There are different ways of choosing the number by which we'll
+divide the flat field image. For images with no significant
+vignetting, simply dividing every pixel in the flat field image, by
+the mode of the image works well.  We get the mode from the
+<code>imstat</code> task:</p>
+
+
+<code>
+cl&gt; imstat flat_V<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IMAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NPIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MEAN&nbsp;&nbsp;&nbsp;
+STDDEV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAX<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;flat_V &nbsp;&nbsp; 173400&nbsp;&nbsp;&nbsp;
+49996.&nbsp;&nbsp;&nbsp; 49496.&nbsp;&nbsp;&nbsp;&nbsp;
+1069.&nbsp;&nbsp;&nbsp; 45694.&nbsp;&nbsp;&nbsp; 52944.
+</code>
+
+<p>Now divide the flat by the mode:</p>
+
+<code>
+cl&gt; imarith flat_V / 49996.0 flat_V_norm
+</code>
+
+<p>Now we have a normalized flat in which most pixels are near to a
+value of one.</p>
+
+<hr>
+
+<h4 id="F">F) Dividing by the Flats</h4>
+
+<p>Now we have dark subtracted object frames and flat frames which
+have been combined, dark subtracted, and normalized. To correct the
+images for multiplicative errors we just divide:</p>
+
+<code>
+cl&gt; imarith @list_M42_V_120s / flat_V_norm @list_M42_V_120s
+</code>
+
+<p>Now our science image has been corrected for additive and
+multiplicative errors.</p>
+
+<hr>
+
+<h4 id="G">G) Aligning Multiple Images for Stacking</h4>
+
+<p>Many times we will need to build up signal to noise using long
+exposures. Unfortunately there are some obstacles to making extremely
+long exposures, including imperfect tracking.  At SBO, the longest
+exposure we can take without stars trailing is between 3 and 5
+minutes.  This is insufficient for many faint objects, especially
+using narrowband filters.  The way to get around this is to take
+several 300 second exposures and combine them.</p>
+
+<p>Unlike darks and flats, there is an extra step in combining several
+science exposures: alignment.  The images will be offset slightly from
+one another, so we need to shift them into alignment.  To do this we
+use the <code>imalign</code> task.  Looking at the help page for
+imalign, we see that there are several inputs: <code>imalign input
+reference coords output shifts=shifts.txt</code>.  We will also use an
+optional parameter shifts.  I'll discuss these inputs one at a
+time.</p>
+
+<code>input</code> -- the list of images to align.<br>
+<code>reference</code> -- the reference image to which all others will be aligned.<br>
+<code>coords</code> -- a text file, containing the (x, y) coordinates of stars in the reference image, the stars should be visible in all images.  These stars will be used to determine what shifts are necessary to align the images.<br>
+<code>output</code> -- the list of output image names.<br>
+<code>shifts</code> -- a text file, one line per input image, containing an estimate of the shifts between the images.  Use one star, which you can identify in each image, to determine an estimate of these shifts.  This extra input parameter is necessary in almost all cases because the images probably will not be very closely aligned.<br>
+
+<hr>
+
+<h4 id="H">H) Combining Multiple Images</h4>
+
+<p>Once the images are aligned using imalign.  We combine them using
+imcombine similarly to what we did when combining flats.</p>
+
+<code>
+cl&gt; imcombine @list_M42_V_120s M42_V
+</code>
+
+<p>M42_V is now our final image in the V filter.</p>
+
+<hr>
+<a href="index.html">TOC</a> | <a href="IRAFintro_04.html">previous</a> | <a href="IRAFintro_06.html">next</a><br>
+<hr>
+Copyright &#169; <a href="mailto:jmwalawender@gmail.com">Josh Walawender</a>
+<!--code_set--></body>
+</html>
