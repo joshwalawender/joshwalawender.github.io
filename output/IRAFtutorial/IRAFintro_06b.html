@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Introduction to IRAF</title>
+
+	<meta http-equiv="content-type"
+	content="text/html; charset=ISO-8859-1">
+<meta name="robots" content="follow,index"></head>
+
+<body>
+
+<h2>Alternative to the APALL Task</h2>
+
+<p>With continuum spectra the <code>apall</code> task is an excellent
+tool for extracting the spectra.  When dealing with nebular spectra,
+there is no nice trace for <code>apall</code> to lock on to.  In this
+case, more sophisticated methods (such as those described in <a
+href="http://iraf.noao.edu/docs/spectra.html">A User's Guide to
+Reducing Slit Spectra with <em>IRAF</em></a>, by Phil Massey, Frank
+Valdes, and Jeannette Barnes) should be used.  A simple method is
+described here.</p>
+
+<hr>
+
+<h4 id="C">VI. C)  Preparing to Extract an Aperture</h4>
+
+<p>If your spectrum is aligned along the horizontal pixel axis, then
+the obvious alternative to <code>apall</code> is to simply average
+several lines together to generate a one dimensional image.  If your
+spectra is not aligned to the horizontal axis, simply use the
+<code>rotate</code> task in IRAF to align it.</p>
+
+<p>To combine the lines of the image into a single line (one
+dimensional spectrum), we use the <code>imcombine</code> with the
+appropriate input.  In this case, rather than adding images, we want
+to add lines.  We do this using image subsections as described in
+section IV. D of this tutorial.  We need to create an input list in
+which each input image is a line of the image we wish to combine.</p>
+
+<p>I have written a simple UNIX code which automatically generates
+this list.  You can download the file <a href="mkspeclist">here</a>
+(simply save the file to the directory you are working in or to a
+location in your UNIX path).  After downloading the file, you'll need
+to make it executable by running the UNIX command:</p>
+
+<code>
+% chmod a+x mkspeclist
+</code>
+
+<p>The <code>chmod</code> command only needs to be run one time after
+you download the file.</p>
+
+<p>The proper use of <code>mkspeclist</code> is:</p>
+
+<code>
+% mkspeclist imagename l1 l2
+</code>
+
+<p>where <i>imagename</i> is the name of the image you wish to combine
+the lines of and <i>l1</i> and <i>l2</i> are the first and last lines
+of the image which should be combined.  The program simply prints the
+list to the screen.</p>
+
+<p>For example, here is what the output might look like:</p>
+
+<code>
+% mkspeclist myspectrum 450 460<br>
+myspectrum[*,450]<br>
+myspectrum[*,451]<br>
+myspectrum[*,452]<br>
+myspectrum[*,453]<br>
+myspectrum[*,454]<br>
+myspectrum[*,455]<br>
+myspectrum[*,456]<br>
+myspectrum[*,457]<br>
+myspectrum[*,458]<br>
+myspectrum[*,459]<br>
+myspectrum[*,460]
+</code>
+
+<p>Now you can copy and paste those lines into a test editor to
+generate the list file.  Alternatively, you can "redirect" the output
+of <code>mkspeclist</code> to a file like this:</p>
+
+<code>
+% mkspeclist myspectrum 450 460 > lines_myspectrum
+</code>
+
+<p>Now if you open up the lines_myspectrum file, it will contain the
+11 lines which previously were printed to the screen.</p>
+
+<hr>
+
+<h4 id="D">VI. D)  Extracting an Aperture</h4>
+
+<p>Now that we have our input list, we can combine lines using:</p>
+
+<code>
+cl&gt; imcombine @lines_myspectrum myspectrum_1D combine=average
+</code>
+
+<p>Note that I have explicitly specified the combine to be an average
+(as opposed to a median), since we may be combining something that is
+not uniform in brightness, we shouldn't do a median.</p>
+
+<hr>
+
+<h4 id="E">VI. E)  Inspecting the One Dimensional Spectrum</h4>
+
+<p>The myspectrum_1D file is now a one dimensional fits file which
+looks boring when displayed (it is one line of pixels).  However, we
+can use the IRAF task <code>implot</code> to look at it:</p>
+
+<code>
+cl&gt; implot myspectrum_1D
+</code>
+
+<p>The resulting IRAF window might look something like Fig. 9:</p>
+
+<div style="text-align: center;">
+<img alt="" src="IRAF6_fig9.jpg">
+<br>
+Fig. 9
+</div>
+
+<p>The <code>implot</code> task has many interactive features which
+can be useful.  They are documented in the help page, but one I will
+point out here is the ability to change the viewing window to "zoom
+in" on a part of the image.  For example, in this case, we can see
+only a few really bright lines, but the lower level information is not
+visible.  To see the lower level info, I would like to change the
+y-axis to show a different range.  Right now it is showing something
+like 0 to a little over 6000.  To change it I would point at the plot
+and type <code>:y 0 300</code> (don't forget the colon).  This
+rescales it to a 0 to 300 y-axis.  Now we can see some of the fainter
+lines.  The result can be seen in Fig. 10.</p>
+
+<div style="text-align: center;">
+<img alt="" src="IRAF6_fig10.jpg">
+<br>
+Fig. 10
+</div>
+
+<p>A similar command exists for the x-axis.</p>
+
+<hr>
+
+<h4 id="F">VI. F)  Sky Subtraction</h4>
+
+<p>To sky subtract our spectrum (a task done automatically in
+<code>apall</code>), we simply extract a second spectrum from a set of
+lines in the spectrum which do not contain an object:</p>
+
+<code>
+% mkspeclist myspectrum 480 900 > lines_sky<br>
+</code>
+
+<code>
+cl&gt; imcombine @lines_sky myspectrum_sky combine=average
+</code>
+
+<p>In this case the lines 480-900 contain only blank sky.  In general
+it is best to combine as many lines as possible to drive down the
+noise that you add by subtracting the sky.</p>
+
+<p>No we simply use <code>imarith</code> to subtract the sky spectrum:</p>
+
+<code>
+cl&gt; imarith myspectrum_1D - myspectrum_sky myspectrum_1D_skysub
+</code>
+
+<p>Now the myspectrum_1D_skysub file is a one dimensional sky
+subtracted spectrum of our source.  Notice that in this subtraction
+step, it was critical that our <code>imcombine</code> commands were
+averages (instead of sums).  If we'd summed, we could not simply
+subtract the sky spectrum from the object spectrum since they
+contained different amounts of sky (different numbers of lines).
+Since we averaged, we don't have to worry about that issue.</p>
+
+<hr>
+
+<p>You may now return to the previous page in the IRAF tutorial and
+continue with <a href="IRAFintro_06.html#H">step H</a>.</p>
+
+<hr>
+<a href="index.html">TOC</a> | <a href="IRAFintro_06.html">previous</a> | next<br>
+<hr>
+Copyright &#169; <a href="mailto:jmwalawender@gmail.com">Josh Walawender</a>
+<!--code_set--></body>
+</html>
