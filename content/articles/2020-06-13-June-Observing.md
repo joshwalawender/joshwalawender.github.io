@@ -4,7 +4,7 @@ Author: Josh Walawender
 Header_Cover: images/APC_0055.jpg
 Category: Observing Reports
 Tags: Astronomy, Observing Reports
-Slug: june-observing-2020
+Slug: june12-observing-2020
 
 # June 12
 
