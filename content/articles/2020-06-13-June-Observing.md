@@ -1,7 +1,7 @@
-Title: June Observing Sessions
+Title: A Quick Observing Session at Kaohe
 Date: 2020-06-13
 Author: Josh Walawender
-Header_Cover: images/APC-0055.jpg
+Header_Cover: images/APC_0055.jpg
 Category: Observing Reports
 Tags: Astronomy, Observing Reports
 Slug: june-observing-2020
