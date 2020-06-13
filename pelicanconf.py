@@ -28,11 +28,16 @@ DEFAULT_PAGINATION = 5
 HEADER_COVER = 'images/6D-7894.jpg'
 GITHUB_URL = 'http://github.com/joshwalawender'
 
-# Notes
-# pelican content -o output -s pelicanconf.py -t pelican-clean-blog -r --listen
-# ghp-import -m "Generate Pelican site" --no-jekyll -b master output
 
 INTRO_CONTENT = """Welcome to Josh Walawender's blog.  This mostly contains posts 
 related to amateur astronomy such as observing reports.  You can check out some 
 of my photography over at
 <a href='https://www.twilightlandscapes.com'>www.twilightlandscapes.com</a>"""
+
+# How to Publish:
+# Local Test:
+#   pelican content -o output -s pelicanconf.py -t pelican-clean-blog -r --listen
+# Publish to GitHub:
+#   pelican content -o output -s pelicanconf.py -t pelican-clean-blog
+#   ghp-import -m "Generate Pelican site" --no-jekyll -b master output
+#   git push origin master
