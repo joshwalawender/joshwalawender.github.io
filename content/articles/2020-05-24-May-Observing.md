@@ -25,10 +25,12 @@ This was a short solo session at a pullout below the top of the Mauna Loa Access
 May 23 was a good session for me.  Some of the WHAC members were thinking of heading to the Ka'ohe site and it turns out that heading for the Mauna Loa access road was a good call as it allowed me to keep driving up far enough to get above the clouds.  I'd initially stopped at a site lower down, but even through the clouds were receding before sunset, they were still above me, so I went all the way to the end of the road.
 
 ![SVX152 set up at the end of the Mauna Loa Access Road with Maunakea in the background.](images/6D-7947.jpg)
+>SVX152 set up at the end of the Mauna Loa Access Road with Maunakea in the background.
 
 The trio of the crescent moon, Venus, and Mercury setting in twilight was spectacular:
 
 ![The crescent moon, Venus, and Mercury setting.](images/6D-7965.jpg)
+>The crescent moon, Venus, and Mercury setting.
 
 I started the night with the goal of going through an article on face on and edge on galaxies from the May issue of Astronomy magazine.  About half way through that list I got distracted and started looking at some close doubles (the seeing was variable with some very good moments).  I split a tight 0.9" double with a pair of clean airy disks in those good moments of seeing.  Fortunately the winds were very light for much of the night which limited wind shake.
 

@@ -12,7 +12,8 @@ I got out for a short, low key observing session at the Kaohe site on Friday nig
 
 It was clear when I arrived before sunset and the views of sunset were beautiful.  It was humid for the early part of the night and as it got dark, I could see some ground fog forming around the pu'u just uphill of the observing site.  I was worried the clouds would form just above us, but the skies stayed clear and very dark.  I took a few SQM readings later in the night and got an average of about 21.9.
 
-![SVX152 set up at Kaohe.](images/APC_0055.jpg)
+![The SVX152 set up at Kaohe.](images/APC_0055.jpg)
+>The SVX152 set up at Kaohe.
 
 One interesting feature of the night was the sound of military helicopters doing training exercises in "aviation gunnery".  I'd heard the helicopters before sunset, but never saw them.  After dark, we would hear the gunfire and explosions and could see some of the tracer rounds against the backgrop of Mauna Loa.  The tracers were red and looked like lasers from a SciFi movie.
 

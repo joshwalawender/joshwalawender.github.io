@@ -13,22 +13,21 @@ On Friday evening I took a drive up the Mauna Loa access road to meet some frien
 As it got dark, the comet and its tail became visible to the naked eye.  The tail was an arc a few degrees long and could be traced maybe 5 degrees in binoculars.  The view was somewhat limited by the cirrus, but the clouds did add some drama to photographs.
 
 ![Comet NEOWISE](images/6D-9429-2.jpg)
-The comet with the last remnants of sunset colors in the clouds.
-
+> The comet with the last remnants of sunset colors in the clouds.
 
 ![Comet NEOWISE](images/6D-9528-2.jpg)
-The comet with both tails (dust and ion) visible through the cirrus.
+> The comet with both tails (dust and ion) visible through the cirrus.
 
 ![Comet NEOWISE](images/6D-9537-2.jpg)
-A wide field image of the comet setting next to Maunakea with Haleakala on the horizon.
+> A wide field image of the comet setting next to Maunakea with Haleakala on the horizon.
 
 ![Comet NEOWISE](images/6D-9557-2.jpg)
-The comet setting next to Haleakala.
+> The comet setting next to Haleakala.
 
 I combined a few sequences of images together in to time lapse videos of the comet.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dIZLADFSjDs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-Thin cirrus clouds streaming past the comet as the last colors of sunset disappear from the clouds.
+> Thin cirrus clouds streaming past the comet as the last colors of sunset disappear from the clouds.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aiYLiK5LRps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-Comet NEOWISE sets behind Haleakala (on the island of Maui) with the west slope of Maunakea in the foreground.
+> Comet NEOWISE sets behind Haleakala (on the island of Maui) with the west slope of Maunakea in the foreground.
