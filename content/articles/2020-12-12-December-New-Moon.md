@@ -8,6 +8,9 @@ Slug: dec-2020-new-moon
 
 I got out for two short observing sessions this new moon period.  The first was Friday night, it was a short session, just a couple of hours of dark time, but conditions were great.  I went to one of the pullouts off of the Mauna Loa Access Road and there was no wind and the clouds were well below the saddle level.
 
+![The telescope ready for a night of observing.](images/IMG_5111.jpg)
+> The telescope ready for a night of observing.
+
 ## Friday Night
 
 The seeing wasn't great, so I stuck to deep sky objects for observing.  I worked through an observing list of DSOs in Sculptor.  This is a constellation I'd overlooked when observing from more northern latitudes since it does not rise very high from there, but Sculptor has several nice deep sky objects within its borders.
