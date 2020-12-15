@@ -28,6 +28,9 @@ DEFAULT_PAGINATION = 5
 HEADER_COVER = 'images/IMG_5112.jpg'
 GITHUB_URL = 'http://github.com/joshwalawender'
 
+PATH = 'content'
+STATIC_PATHS = ['static', 'extra/CNAME']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}}
 
 INTRO_CONTENT = """Welcome to Josh Walawender's blog.  This mostly contains posts 
 related to amateur astronomy such as observing reports.  You can check out some 
