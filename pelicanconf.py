@@ -25,7 +25,7 @@ DEFAULT_PAGINATION = 5
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-HEADER_COVER = 'images/6D-7894.jpg'
+HEADER_COVER = 'images/IMG_5112.jpg'
 GITHUB_URL = 'http://github.com/joshwalawender'
 
 
