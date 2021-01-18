@@ -1,5 +1,5 @@
 Title: December New Moon
-Date: 2020-11-15
+Date: 2020-12-13
 Author: Josh Walawender
 Header_Cover: images/IMG_5112.jpg
 Category: Observing Reports
