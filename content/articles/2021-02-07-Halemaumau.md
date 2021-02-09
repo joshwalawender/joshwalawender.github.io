@@ -3,7 +3,7 @@ Date: 2021-02-07
 Author: Josh Walawender
 Header_Cover: images/IMG_5112.jpg
 Category: Podcasting
-Tags: Astronomy, Podcast, Space Junk
+Tags: Astronomy, Volcano, Photography, Time Lapse
 Slug: feb-2021-halemaumau
 
 I spent this past weekend in [Hawaii Volcanoes National Park](https://www.nps.gov/havo/index.htm).  It was my first trip there since the most recent eruption started in late December.  Hiking out to one of the overlooks situated almost due East of the crater late at night meant we had that whole section of the park to ourselves.
