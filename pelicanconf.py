@@ -37,7 +37,7 @@ of my photography over at
 # How to Publish:
 # Local Test:
 #   pelican content -o output -s pelicanconf.py -t pelican-clean-blog -r --listen
-#   View at: http://localhost:8000
+#   open http://localhost:8000
 # Publish to GitHub:
 #   pelican content -o output -s pelicanconf.py -t pelican-clean-blog
 #   ghp-import -m "Generate Pelican site" --no-jekyll -b master output
