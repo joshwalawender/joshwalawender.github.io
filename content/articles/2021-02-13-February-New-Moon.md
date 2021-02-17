@@ -12,7 +12,7 @@ After dark, I spent quite a bit of time just appreciating the beautiful naked ey
 
 I then got down to some observing with my SVX152 refractor.  I went through an observing list from the February 2019 issue of Astronomy Magazine on "Observing Stellar Blowouts".  It contained a handful of lesser known planetary nebulae.  One seemed oddly low on the horizon until I remembered that this list was probably written for mid-northern latitudes and this object (NGC 7354 in Cepheus) would be circumpolar for many of Astronomy Magazine's readers.  I caught it very low, less than 10 degrees above the horizon.
 
-A few of these nebulae stood out as really nice and I don't recall observing any of them before.  Here are slightly expanded versions of my notes taken during the night:
+A few of these nebulae stood out as really nice.  Here are slightly expanded versions of my notes taken during the night:
 
 **NGC 2371**: A nice little double lobed planetary nebula in my Pentax 7XW eyepiece. Better without the UHC filter.
 
