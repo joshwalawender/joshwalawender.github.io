@@ -7,7 +7,7 @@ SITENAME = "Twilight Landscapes Blog"
 SITEURL = ''
 
 PATH = 'content'
-STATIC_PATHS = ['images', 'IRAFtutorial', 'extra/CNAME']
+STATIC_PATHS = ['images', 'IRAFtutorial', 'extra/CNAME', 'feeds']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}}
 ARTICLE_EXCLUDES = ['IRAFtutorial']
 
@@ -17,9 +17,11 @@ DEFAULT_LANG = 'en'
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
+FEED_ALL_RSS = None
+CATEGORY_FEED_RSS = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
 
 DEFAULT_PAGINATION = 5
 
@@ -39,6 +41,6 @@ of my photography over at
 #   pelican content -o output -s pelicanconf.py -t pelican-clean-blog -r --listen
 #   open http://localhost:8000
 # Publish to GitHub:
-#   pelican content -o output -s pelicanconf.py -t pelican-clean-blog
+#   pelican content -o output -s publishconf.py -t pelican-clean-blog
 #   ghp-import -m "Generate Pelican site" --no-jekyll -b master output
 #   git push origin master
