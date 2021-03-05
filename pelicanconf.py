@@ -22,6 +22,10 @@ CATEGORY_FEED_RSS = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+MENUITEMS = [
+    ['My Photography', "https://www.twilightlandscapes.com"],
+    ['RSS', "feeds/all.rss.xml"],
+]
 
 DEFAULT_PAGINATION = 5
 
