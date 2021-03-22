@@ -1,10 +1,11 @@
 Title: Backyard Observatory Build 3 - Uses
-Date: 2021-03-10
+Date: 2021-03-22
 Author: Josh Walawender
 Header_Cover: images/IMG_5030.jpg
 Category: Observatory Build
-Tags: Astronomy, Observatory Build
+Tags: Astronomy, Observatory Design
 Slug: observatory03-uses
+Status: draft
 
 What will this observatory be used for?  I had to consider what I wanted out of this before I could really get in to designing it.  One thing I knew from the start was that I wanted to plan for making it completely remotely controlled and eventually totally robotic.  A good fraction of clear skies come in the mornings here when I'm asleep and I wanted to take advantage of those.  My "day job" as a Staff Astronomer means I have a pretty variable sleeping schedule, but instead of this making it easier for me to justify staying up all night, it makes me cherish the times when I can get a full night's sleep.
 

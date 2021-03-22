@@ -1,10 +1,11 @@
 Title: Backyard Observatory Build 2 - Weather
-Date: 2021-03-09
+Date: 2021-03-22
 Author: Josh Walawender
 Header_Cover: images/IMG_5030.jpg
 Category: Observatory Build
-Tags: Astronomy, Observatory Build
+Tags: Astronomy, Observatory Design
 Slug: observatory02-weather
+Status: draft
 
 Over the 5 years I've lived in this house, I've found that I have a decent amount of clear skies, but that wind and blowing rain will likely be a major problem for an observatory.  I live on the "dry side" of the town of Waimea on the Big Island of Hawaii.  Waimea sits in the saddle between Maunakea and the Kohalas, so the prevailing trade winds are often funneled through this area and blow steadily.  Winds routinely average 20 mph with gusts to 30 mph.
 

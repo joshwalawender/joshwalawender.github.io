@@ -1,10 +1,11 @@
 Title: Backyard Observatory Build 1 - Introduction
-Date: 2021-03-08
+Date: 2021-03-22
 Author: Josh Walawender
 Header_Cover: images/IMG_5030.jpg
 Category: Observatory Build
-Tags: Astronomy, Observatory Build
+Tags: Astronomy, Observatory Design
 Slug: observatory01-intro
+Status: draft
 
 I've been dreaming of building a backyard observatory since I got hooked on astronomy as kid.  I remember dreaming of building a dome and putting it in the backyard of my parents house.  That was way beyond my capabilities at the time of course, but here I am a mere 30 years later and I'm just now feeling confident enough to embark on a similar project.
 

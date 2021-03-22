@@ -1,10 +1,11 @@
 Title: Backyard Observatory Build 4 - A Rough Outline
-Date: 2021-03-11
+Date: 2021-03-22
 Author: Josh Walawender
 Header_Cover: images/IMG_5030.jpg
 Category: Observatory Build
-Tags: Astronomy, Observatory Build
+Tags: Astronomy, Observatory Design
 Slug: observatory04-rough-outline
+Status: draft
 
 As I've been thinking about the design of this observatory a few choices about design had to be made.
 
