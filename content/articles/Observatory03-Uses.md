@@ -1,0 +1,22 @@
+Title: Backyard Observatory Build 3 - Uses
+Date: 2021-03-22
+Author: Josh Walawender
+Header_Cover: images/IMG_5030.jpg
+Category: Observatory Build
+Tags: Astronomy, Observatory Design
+Slug: observatory03-uses
+Status: draft
+
+What will this observatory be used for?  I had to consider what I wanted out of this before I could really get in to designing it.  One thing I knew from the start was that I wanted to plan for making it completely remotely controlled and eventually totally robotic.  A good fraction of clear skies come in the mornings here when I'm asleep and I wanted to take advantage of those.  My "day job" as a Staff Astronomer means I have a pretty variable sleeping schedule, but instead of this making it easier for me to justify staying up all night, it makes me cherish the times when I can get a full night's sleep.
+
+The next question is whether I want to accomodate eyepiece viewing.  This actually has a big impact on the footprint of the observatory.  If the goal is imaging only, then the enclosure has to be big enough to contain the swing area of the mount and telescope with a camera attached.  If you want to human in there looking through an eyepiece, you need additional room on all sides for them to walk and also for an observing chair to fit so they can get to the eyepiece comfortably.
+
+I have decided though that the goal is remote or robotic imaging only with no eyepiece viewing, so I dont have to accomodate an observer.  I really enjoy eyepiece viewing, so this was a tough call and I went back and forth on it several times.  I try to get out and observe at a true dark site at each new moon (when life allows), so focusing my eyepiece viewing on those sessions and imaging (or science!) from the home observatory seems like a good dividing line.  Not having to design space for a human means that the building can be small enough to avoid the need for a building permit which makes life easier.
+
+The choice to forgo eyepiece viewing inside was a little tough as I'm not a big imager.  I've done astrophotography in the past, but always by taking my gear out to a dark site.  This really limited how much imaging I did though.  Much of my time under dark skies involved tweaking and troubleshooting equipment that was set up and taken down each night, so new issues seemed to crop up all the time.  I eventually decided that to do imaging well, I really needed a permanent setup and I put those activities on hold.
+
+I'm still not sure how much "pretty picture" imaging I'll end up doing.  I really enjoy the observing aspects of imaging and I do enjoy working with the equipment.  I haven't found the image processing very satisfying though.  It seems that the really good imagers out there get a lot of satisfaction out of the processing steps to take the reduced data and make a really nice image.  There's an enormous challenge in displaying detail in the faintest parts of an image while also controlling the contrast so that the details in the brighter regions are visible at the same time.  Whenever I look at as astroimage, I look to see whether the stars (especially the brighter stars) have any color in them or of they are all a washed out white.  I'm not sure I have the skills or patience to do that sort of image processing.
+
+That said, there is a whole other area where having this observatory does interest me a great deal and that is for science.  Just doing some straightforward photometric monitoring projects would be interesting.  I'm also intrigued by a new class of detectors based on InGaS which are starting to come down in price.  These detectors are sensitive to visible light and near-infrared out to almost 1.5 microns.  At the moment, they are too expensive, but in the future I hope to be able to do near-IR photometry which is a field that is not crowded right now due to the technical challenges.
+
+Finally, I'd love to be able to do some spectroscopic monitoring projects.  Most of the observations at Keck Observatory where I work are spectroscopy and it is still only a small subset of amateur astronomers who are exploring this -- though there are growing numbers of them and there are now several commercially available spectrographs for amateurs.  Once the observatory is in place and operational, I plan to buy a spectrograph and add a scope dedicated to spectroscopy.
