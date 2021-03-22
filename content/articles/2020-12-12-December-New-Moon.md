@@ -3,7 +3,7 @@ Date: 2020-12-13
 Author: Josh Walawender
 Header_Cover: images/IMG_5112.jpg
 Category: Observing Reports
-Tags: Astronomy, Observing Reports
+Tags: Astronomy, Observing Reports, Mauna Loa, SVX152, AZ100
 Slug: dec-2020-new-moon
 
 I got out for two short observing sessions this new moon period.  The first was Friday night, it was a short session, just a couple of hours of dark time, but conditions were great.  I went to one of the pullouts off of the Mauna Loa Access Road and there was no wind and the clouds were well below the saddle level.

@@ -3,7 +3,7 @@ Date: 2020-06-14
 Author: Josh Walawender
 Header_Cover: images/6D-7894.jpg
 Category: Observing Reports
-Tags: Astronomy, Observing Reports
+Tags: Astronomy, Observing Reports, Mauna Loa, SVX152, AZ100
 Slug: june13-observing-2020
 
 # June 13

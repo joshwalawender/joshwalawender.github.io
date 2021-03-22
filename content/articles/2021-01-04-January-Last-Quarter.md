@@ -3,7 +3,7 @@ Date: 2021-01-04
 Author: Josh Walawender
 Header_Cover: images/IMG_5112.jpg
 Category: Observing Reports
-Tags: Astronomy, Observing Reports
+Tags: Astronomy, Observing Reports, Mauna Loa, SVX152, AZ100
 Slug: jan-2021-last-quarter
 
 Coming out of the full moon time and before I started a run of support nights for work, there was a window for observing: a night where the moon would not rise until about 10:40 PM local time.  The forecast was clear of high clouds, but it had been very windy recently.  Looking at the detailed wind forecast allowed for some optimism as the saddle area might be protected given the prevailing wind direction, so I packed the car and headed out.  It turns out going was a good choice.

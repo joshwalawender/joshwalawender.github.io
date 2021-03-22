@@ -3,7 +3,7 @@ Date: 2020-07-24
 Author: Josh Walawender
 Header_Cover: images/6D-0297.jpg
 Category: Observing Reports
-Tags: Astronomy, Observing Reports, Comets
+Tags: Astronomy, Observing Reports, Comets, Mauna Loa, Photography, Time Lapse
 Slug: july-2020-comet-neowise4
 
 

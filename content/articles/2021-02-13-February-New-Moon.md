@@ -3,7 +3,7 @@ Date: 2021-02-13
 Author: Josh Walawender
 Header_Cover: images/6D-1466.jpg
 Category: Observing Reports
-Tags: Astronomy, Observing Reports
+Tags: Astronomy, Observing Reports, Mauna Loa, SVX152, AZ100
 Slug: feb-2021-new-moon
 
 A window of one night between my night support schedule for work and some poor weather in the forecast led to an observing session on the slopes of Mauna Loa on Friday night.  I got to the site well before sunset and just appreciated the slow fading of the light on Maunakea.  The banner photo for this article was taken after the sun set for me behind the slope of Mauna Loa, but while it was still illuminating Maunakea.

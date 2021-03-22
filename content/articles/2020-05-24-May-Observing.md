@@ -3,7 +3,7 @@ Date: 2020-05-24
 Author: Josh Walawender
 Header_Cover: images/6D-7894.jpg
 Category: Observing Reports
-Tags: Mauna Loa, Astronomy, Observing Reports
+Tags: Astronomy, Observing Reports, Mauna Loa, SVX152, AZ100
 Slug: may-observing-2020
 
 I managed to get out for three nights of observing during this dark of the moon period all using my SVX152 on the Rowan AZ-100.

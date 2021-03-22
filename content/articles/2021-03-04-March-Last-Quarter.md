@@ -3,7 +3,7 @@ Date: 2021-03-04
 Author: Josh Walawender
 Header_Cover: images/6D-1466.jpg
 Category: Observing Reports
-Tags: Astronomy, Observing Reports
+Tags: Astronomy, Observing Reports, Mauna Loa, SVX152, AZ100
 Slug: mar-2021-last-quarter
 
 I got out for a short, mid-week observing session to take advantage of the last quarter moon last night.  I drove up to one the the pullouts on the Mauna Loa access road at about the 7,300 foot elevation level.  I stayed out for less than two hours of full darkness, but it was a lovely night anyway.  It was quiet (at first) with no wind.  At sunset there was a haze layer above me, possibly vog, which I could see as very thin, patchy "clouds" and the sunset colors were a bit washed out due to the scattering.  Once it was dark though, the effects were minimal and there were no thick clouds from the inversion layer.

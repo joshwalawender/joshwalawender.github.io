@@ -3,7 +3,7 @@ Date: 2020-03-22
 Author: Josh Walawender
 Header_Cover: images/6D-7894.jpg
 Category: Observing Reports
-Tags: Mauna Loa, Messier Marathon, Astronomy, Observing Reports
+Tags: Astronomy, Observing Reports, Messier Marathon, Mauna Loa, SVX152, G-11
 Slug: messier-marathon-2020
 
 I practiced some good social distancing and went out for a solo observing session on Sunday night.  I got to the site (a pullout on the Mauna Loa access road at about 8600 ft elevation) right at sunset and set up quickly.  The original plan from months ago was to attempt a Messier Marathon around this time in March with a bunch of other people, but with the COVID-19 crisis gatherings were not recommended and with a crazy week at work leading up to this, I didn’t want to attempt an all nighter.  I figure if there can be such a thing as a “half marathon” for runners, I could try a Half Messier Marathon.  

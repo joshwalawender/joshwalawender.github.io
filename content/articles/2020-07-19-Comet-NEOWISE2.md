@@ -3,7 +3,7 @@ Date: 2020-07-18
 Author: Josh Walawender
 Header_Cover: images/6D-9679.jpg
 Category: Observing Reports
-Tags: Astronomy, Observing Reports, Comets
+Tags: Astronomy, Observing Reports, Comets, Kohala Coast, Photography, Time Lapse
 Slug: july-2020-comet-neowise2
 
 # Comet NEOWISE from the Coast

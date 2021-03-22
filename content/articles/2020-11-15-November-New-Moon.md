@@ -3,7 +3,7 @@ Date: 2020-11-15
 Author: Josh Walawender
 Header_Cover: images/6D-7894.jpg
 Category: Observing Reports
-Tags: Astronomy, Observing Reports
+Tags: Astronomy, Observing Reports, Kaohe, SVX152, AZ100
 Slug: nov-2020-new-moon
 
 Despite an iffy forecast for the summits, I tried to get one more night of observing in.  This time, I had arranged to meet a work colleague at the Kaohe site.  

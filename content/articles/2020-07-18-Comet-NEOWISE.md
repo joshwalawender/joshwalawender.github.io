@@ -3,7 +3,7 @@ Date: 2020-07-17
 Author: Josh Walawender
 Header_Cover: images/6D-9429-2.jpg
 Category: Observing Reports
-Tags: Astronomy, Observing Reports, Comets
+Tags: Astronomy, Observing Reports, Comets, Mauna Loa, Photography, Time Lapse
 Slug: july-2020-comet-neowise
 
 # Comet NEOWISE in Twilight

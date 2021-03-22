@@ -3,7 +3,7 @@ Date: 2021-01-10
 Author: Josh Walawender
 Header_Cover: images/IMG_5112.jpg
 Category: Observing Reports
-Tags: Astronomy, Observing Reports
+Tags: Astronomy, Observing Reports, Mauna Loa, SVX152, AZ100
 Slug: jan-2021-new-moon
 
 I got out for two observing sessions over the last few days.  

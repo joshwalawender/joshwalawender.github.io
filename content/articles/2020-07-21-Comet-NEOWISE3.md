@@ -3,7 +3,7 @@ Date: 2020-07-21
 Author: Josh Walawender
 Header_Cover: images/6D-9870.jpg
 Category: Observing Reports
-Tags: Astronomy, Observing Reports, Comets
+Tags: Astronomy, Observing Reports, Comets, Mauna Loa, SVX152, G-11, Photography, Time Lapse
 Slug: july-2020-comet-neowise3
 
 # A Night of Solar System Viewing

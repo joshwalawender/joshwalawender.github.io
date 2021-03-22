@@ -3,7 +3,7 @@ Date: 2020-06-13
 Author: Josh Walawender
 Header_Cover: images/APC_0055.jpg
 Category: Observing Reports
-Tags: Astronomy, Observing Reports
+Tags: Astronomy, Observing Reports, Kaohe, SVX152, AZ100
 Slug: june12-observing-2020
 
 # June 12
