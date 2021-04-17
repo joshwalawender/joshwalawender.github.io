@@ -16,4 +16,4 @@ My plan is to document the observatory build here on this blog.  I'm not sure ho
 
 I'll make several posts here documenting some of my planning process and then (hopefully) move on to discussing the actual build.  Next up will be discussing the local weather and how that will affect my plans.
 
-To see all articles in this series, look at articles listed under the [Observatory Build](categories/observatory-build) category.
+To see all articles in this series, look at articles listed under the [Observatory Build](tag/observatory-build) tag.
