@@ -3,7 +3,7 @@ Date: 2021-04-17
 Author: Josh Walawender
 Header_Cover: images/IMG_5030.jpg
 Category: Observatory Build
-Tags: Astronomy, Observatory Design
+Tags: Astronomy, Observatory Build, Observatory Design
 Slug: observatory02-weather
 Status: draft
 
