@@ -31,3 +31,10 @@ To be fair, I doubt this would have a big negative effect on a small observatory
 
 Finally, I didn't want to deal with arranging for a cement truck and pouring a large cement pad.  It will likely be more work to build footings and a deck, but I prefer that solution.
 
+## Dimensions
+
+How big should this be?  To get a starting idea, I set up a couple of my telescopes and measured the rough swing area to get an idea of how much clearance I'd need.  My Stellarvue SVX152 refractor with an eyepiece and diagonal on a G-11 mount needs about a 3 foot radius to avoid collisions.  It'll need additional space to accomodate an observer.  Call that an extra 2 feet radially at minimum and you get about a 5 foot radius.  My 16 inch f/4.5 TeleKit dobsonian also has a swing radius of about 5 feet.  While I don't expect to set up the dob in the observatory, it is a nice reference to have in case I change my mind.  Fortunately, with a dob, the observer stands next to the eyepiece and not behind it, so I don't need much extra space to accomodate the observer.
+
+Given those numbers, I'm looking at something at least 10 foot square.  Given that I'm now building a bit bigger (both in footprint and height) than the small, imaging only enclosure I'd originally envisioned.  I think I'm going to base my build on one of the pre-existing plans I've purchased rather than design my own from scratch.  I've heard good things about both [SkyShed](https://www.skyshed.com) and [Backyard Observatories](https://backyardobservatories.com) (BYO), but the CJE1 plans I bought from BYO are a bit roomier.  The largest SkyShed in the plans is 10x12 feet and the BYO is 11.5 x 11.5 feet.
+
+I actually considered going even larger in order to accomodate more storage and even space for a small work area and was looking at the BYO CJE2 model which is 11.5 x 15.5 feet, but I decided it would be better if this plan stopped growing at some point, so I decided to stick with the CJE1.
