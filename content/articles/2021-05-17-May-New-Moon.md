@@ -23,5 +23,5 @@ In addition to the observatory, the naked eye stargazing was wonderful.  The hou
 ![The crescent Moon setting over the Pacific ocean while Venus is visible peeking out between the clouds below the Moon.  Mercury (above and slightly to the right of the Moon) and Mars (near the top of the frame) are also visible.](images/6D-7638.jpg)
 > The photo above shows the crescent Moon setting over the Pacific ocean while Venus is visible peeking out between the clouds below the Moon.  Mercury (above and slightly to the right of the Moon) and Mars (near the top of the frame) are also visible.  The constellations of Auriga (right) and Orion (left) are visible as well as Aldebaran, the brightest star in Taurus, setting to the left of the Moon.
 
-![The same image as above, but with a labels for planets, constellations, and bright stars.](images/6D-7638_labeled.jpg)
-> The same image as above, but with a labels for planets, constellations, and bright stars.
+![The same image as above, but with labels for planets, constellations, and bright stars.](images/6D-7638_labeled.jpg)
+> The same image as above, but with labels for planets, constellations, and bright stars.
