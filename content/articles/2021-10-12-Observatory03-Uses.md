@@ -4,7 +4,7 @@ Author: Josh Walawender
 Header_Cover: images/IMG_5030.jpg
 Category: Observatory Build
 Tags: Astronomy, Observatory Build, Observatory Design
-Slug: 2021-10-12-observatory03-use-cases
+Slug: observatory03-use-cases
 
 I haven't written about the observatory plans in a while.  Several things have come up which delayed a start on construction, but I'm getting back to it now.
 

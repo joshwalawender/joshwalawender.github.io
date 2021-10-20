@@ -1,13 +1,12 @@
 Title: Backyard Observatory - Deciding on the Basic Layout
-Date: 2021-03-22
+Date: 2021-10-19
 Author: Josh Walawender
 Header_Cover: images/IMG_5030.jpg
 Category: Observatory Build
 Tags: Astronomy, Observatory Build, Observatory Design
 Slug: observatory04-basic-layout
-Status: draft
 
-As I get closer to breaking ground on this observatory a few choices about design had to be made.
+As I got closer to breaking ground on this observatory a few choices about design had to be made.
 
 ## Background Research
 
@@ -27,7 +26,7 @@ In addition, one can connect the weather station to the roof controller directly
 
 This question was always a relatively easy one for me.  Concrete is a thermal mass which would radiate heat away during the night and cause seeing issues.  The big research telescopes are built on concrete foundations, but they are also air conditioned during the day so that the interior (including the concrete flooring) is kept at nighttime temperatures.
 
-To be fair, I doubt this would have a big negative effect on a small observatory like the one I have in mind.  In addition, while being on the ["dry side" of Waimea](observatory02-weather) means I have some clear skies, it also means that I'm on the lee side of a mountain range, so I don't expect great seeing on a typical night.  Just going out and watching the twinkling of stars by eye, I can tell there are a number of nights with truly poor seeing that I'll be dealing with.
+To be fair, I doubt this would have a big negative effect on a small observatory like the one I have in mind.  In addition, while being on the ["dry side" of Waimea](observatory02-weather) means I have some clear skies, it also means that I'm on the lee side of a mountain range, so I don't expect great seeing on a typical night.  Just going out and watching the twinkling of stars by eye, I can tell there are a number of nights with quite poor seeing that I'll be dealing with.
 
 Finally, I didn't want to deal with arranging for a cement truck and pouring a large cement pad.  It will likely be more work to build footings and a deck, but I prefer that solution.
 
