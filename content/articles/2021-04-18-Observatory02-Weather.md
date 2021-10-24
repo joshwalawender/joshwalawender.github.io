@@ -1,7 +1,7 @@
 Title: Backyard Observatory - Weather
 Date: 2021-04-17
 Author: Josh Walawender
-Header_Cover: images/IMG_5030.jpg
+Header_Cover: images/Observatory/IMG_5030.jpg
 Category: Observatory Build
 Tags: Astronomy, Observatory Build, Observatory Design
 Slug: observatory02-weather
@@ -12,19 +12,19 @@ The banner photo above looks out of the back of my property toward the Kohalas. 
 
 In addition to wind shaking the telescope and blurring the image, the winds often carry misty rain.  As the trade winds blow moisture up against the mountain slopes, it precipitates out as rain.  This is why Hilo and the Hamakua coast are so lush and green.  As a result, the leeward areas of Kawaihae and Waikoloa Village are very dry.  
 
-![Landsat image of the Big Island](images/Hawaii_Landsat.jpg)
+![Landsat image of the Big Island](images/Observatory/Hawaii_Landsat.jpg)
 > A Landsat image of the Big Island (courtesy of NOAA/NASA) with labels added by me indicating the mountains on the island and the town of Waimea where I live.
 
 The Landsat image above shows this beautifully.  The dark green areas show where there is heavy rainfall and lush vegetation.  Rainfall in the Kohala mountains has carved out dramatic valleys on the windward side.  My house lies West of Waimea near where the slopes of Maunakea and Kohala meet and right at the boundary between the green and brown areas in the Landsat image.
 
 The mist and rain on the wet side of the mountains can be carried by the wind over to where I am even when it is clear overhead.
 
-![The Kohala Mountains](images/IMG_5030.jpg)
+![The Kohala Mountains](images/Observatory/IMG_5030.jpg)
 > The Kohala Mountains
 
 The blowing rain means we get rainbows on an almost daily basis.
 
-![Rainbows in front of the Kohalas.](images/IMG_5046.jpg)
+![Rainbows in front of the Kohalas.](images/Observatory/IMG_5046.jpg)
 > Rainbows in front of the Kohalas.
 
 After watching the weather here for several years I know that I get clear skies -- enough to make an observatory useful, but the problem will be that wind.  As a result, I'll have to design the observatory to handle wind and make sure it can close reliably if the wind carries rain.
@@ -35,7 +35,7 @@ Instead, I recently installed a weather station (a Davis Vantage Vue) out at the
 
 To install the weather station, I used an 8 foot section of aluminum pipe that I'd bought for this process (the Davis has a built in pole mount).  I dug out a hole roughly 16 inches deep and 10 inches across and set the pole in concrete.  While the concrete set, I used a spare "surveyor's tripod" and some gaffer tape to prevent the pole from tipping over.
 
-![Bracing the pole for the weather station while the mortar set.](images/IMG_5252.jpg)
+![Bracing the pole for the weather station while the mortar set.](images/Observatory/IMG_5252.jpg)
 > Bracing the pole for the weather station while the mortar set.
 
 Once the concrete had set, I attached the weather station, aligned it to North and I'm now getting much more reliable wind data.

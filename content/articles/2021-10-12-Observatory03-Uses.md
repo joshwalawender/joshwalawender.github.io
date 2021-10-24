@@ -1,7 +1,7 @@
 Title: Backyard Observatory - Use Cases
 Date: 2021-10-12
 Author: Josh Walawender
-Header_Cover: images/IMG_5030.jpg
+Header_Cover: images/Observatory/IMG_5030.jpg
 Category: Observatory Build
 Tags: Astronomy, Observatory Build, Observatory Design
 Slug: observatory03-use-cases
@@ -29,5 +29,5 @@ Finally, I'd love to be able to do some spectroscopic monitoring projects.  Most
 
 One quick update on actual progress on building the observatory: I've just received a shipment of lumber and other building materials, so things should start moving quickly now.  More to come in future articles.
 
-![Lumber to start the observatory build arrives and is stacked in my garage.](images/Observatory_Lumber_1.jpg)
+![Lumber to start the observatory build arrives and is stacked in my garage.](images/Observatory/Lumber_1.jpg)
 > Lumber to start the observatory build arrives and is stacked in my garage.

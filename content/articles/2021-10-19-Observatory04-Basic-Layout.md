@@ -1,7 +1,7 @@
 Title: Backyard Observatory - Deciding on the Basic Layout
 Date: 2021-10-19
 Author: Josh Walawender
-Header_Cover: images/IMG_5030.jpg
+Header_Cover: images/Observatory/IMG_5030.jpg
 Category: Observatory Build
 Tags: Astronomy, Observatory Build, Observatory Design
 Slug: observatory04-basic-layout
