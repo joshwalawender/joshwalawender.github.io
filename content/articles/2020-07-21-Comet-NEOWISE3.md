@@ -12,7 +12,7 @@ On Sunday, I made another trip up the the saddle area between Mauna Loa and Maun
 
 With clear dark skies, the comet was much easier to find in twilight and made more of a visual impact with the naked eye.  The only thing marring the view was that the military base at Pohakuloa was doing some sort of night training exercises and was launching flares, presumably to illuminate the battlefield.
 
-![Comet NEOWISE closeup.](images/6D-9870.jpg)
+![Comet NEOWISE closeup.](images/NEOWISE-2020/6D-9870.jpg)
 > Comet NEOWISE closeup.
 
 I took some photos and a time lapse on a tracking mount.  Because of this, the comet stays stationary and the horizon appears to rise to cover it.  This is actually a better representation of what is actually happening as the stars "setting" is actually due to the Earth's rotation causing our horizon to rise.

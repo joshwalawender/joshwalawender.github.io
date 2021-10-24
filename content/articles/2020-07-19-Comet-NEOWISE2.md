@@ -12,10 +12,10 @@ Another attempt at seeing Comet NEOWISE (C/2020 F3) last night was hampered by h
 
 Even there, a few low level clouds coming over the Kohalas kept blocking out the comet, so while we did see it naked eye and with binoculars it was never quite as dramatic as [yesterday's view](july-2020-comet-neowise.html).
 
-![Sunset colors](images/6D-9679.jpg)
+![Sunset colors](images/NEOWISE-2020/6D-9679.jpg)
 > Sunset colors in the patch of cirrus that stubbornly refused to move and partially blocked our view of the comet.
 
-![Comet NEOWISE](images/6D-9705.jpg)
+![Comet NEOWISE](images/NEOWISE-2020/6D-9705.jpg)
 > Comet NEOWISE through a gap in the clouds.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4SfII_weMh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

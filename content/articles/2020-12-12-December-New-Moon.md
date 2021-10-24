@@ -17,7 +17,7 @@ The seeing wasn't great, so I stuck to deep sky objects for observing.  I worked
 
 The highlights for me included NGC 253, the famous "Sculptor Galaxy" an edge on galaxy with what looks like texture due to myriad dust lanes.  I'd imaged NGC 253 back in 2007 shortly after I'd moved to the island.
 
-![An LRGB image of NGC253, the Sculptor Galaxy](images/NGC253_LRGB.jpg)
+![An LRGB image of NGC253, the Sculptor Galaxy](images/Astrophotos/NGC253_LRGB.jpg)
 > An image of NGC 253 which I took in 2007 from the Visitor Information Station on Maunakea.  This was imaged using an SBIG ST-2000XM CCD with LRGB filters on a Stellarvue SV102ABV refractor with a total exposure time of 2.75 hours.
 
 The nearby NGC 288 globular cluster is another lovely object which yielded lots of resolution in my 13mm eyepiece in the SVX152 refractor.  NGC 300, a large face on galaxy with hints of spiral arms, and NGC 55, a large edge on galaxy were nice finds as well.
